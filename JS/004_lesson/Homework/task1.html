@@ -3,6 +3,28 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Представьте, что в JavaScript нет метода call, есть только метод apply. Используя apply, напишите метод call.     
+    -->
+    <script>
+        Object.prototype.call_new = function (obj) {
+            var args = [].slice.call(arguments);
+            return this.call(obj, args.slice(1));
+        }
+
+        function sayHi() {
+            alert('Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old!');
+        };
+
+        var user = {
+            name: 'Vasya',
+            age: 25
+        };
+
+        //user.sayHi();
+
+        sayHi.call_new(user);
+    </script>
 </head>
 <body>
 
