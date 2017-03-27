@@ -3,6 +3,25 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите функцию-конструктор Summator, которая создает объект с двумя методами. 
+        * Метод sum(a,b) возвращает сумму двух значений;
+        * Метод run() запрашивает два значения при помощи prompt и выводит их сумму, используя метод sum. 
+        В итоге вызов new Summator().run() должен спрашивать два значения и выводить их сумму.
+    -->
+    <script>
+        function Summator() { }
+        Summator.prototype.sum = function (a, b) {
+            return a + b;
+        }
+        Summator.prototype.run = function () {
+            var x = +prompt('Input first value: ');
+            var y = +prompt('Input second value: ');
+            alert('Sum: ' + this.sum(x, y));
+        }
+
+        new Summator().run();
+    </script>
 </head>
 <body>
 
