@@ -3,6 +3,24 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите функцию, которая принимает один аргумент и возвращает его тип данных. 
+        Выполните обработку исключений в случае передачи двух и больше аргументов.
+    -->
+    <script>
+        function scanType() {
+            if (arguments.length > 1) throw new SyntaxError("Данные некорректны");
+            return typeof arguments[0];
+        }
+
+        try {
+            alert(scanType({}));
+            scanType(1, 2);
+        }
+        catch (e) {
+            alert(e.message);
+        }
+    </script>
 </head>
 <body>
 

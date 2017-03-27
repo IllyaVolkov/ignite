@@ -3,6 +3,27 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите программу, которая принимает математическое выражение (используйте prompt) и результат его получает через eval.
+        При ошибке нужно выводить сообщение и просить изменить некорректный ввод.
+        Ошибкой считается не только некорректное выражение, такое как 2+, но и выражение, возвращающее NaN, например 0/0.    
+    -->
+    <script>
+        function countExp() {
+            var expression = prompt("Введите выражение: ");
+            try {
+                var value = eval(expression);
+                if (isNaN(value)) throw "Error!";
+                return value;
+            }
+            catch (e) {
+                alert("Ошибка! Попробуйте еще раз!");
+                return countExp();
+            }
+        }
+
+        alert(countExp());
+    </script>
 </head>
 <body>
 

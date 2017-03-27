@@ -3,6 +3,28 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--        
+        Превратите объект leader из примера ниже в JSON:
+        ```
+        var leader = {
+          name: "Василий Иванович",
+          age: 35
+        };
+        ``` 
+        После этого конвертируйте получившуюся строку обратно в объект.
+    -->
+    <script>
+        var leader = {
+            name: "Василий Иванович",
+            age: 35
+        };
+
+        var strObj = JSON.stringify(leader);
+        alert(strObj);
+        var newObj = JSON.parse(strObj);
+        alert(newObj);
+
+    </script>
 </head>
 <body>
 
