@@ -3,6 +3,21 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите функцию, которая складывает числа при двойном вызове. 
+        Например: 
+        ```
+        add(3)(4)  // 7
+        ```    
+    -->
+    <script>
+        function sumTwoCalls(arg1) {
+            return function (arg2) {
+                return arg1 + arg2;
+            }
+        }
+        alert(sumTwoCalls(3)(4));
+    </script>
 </head>
 <body>
 

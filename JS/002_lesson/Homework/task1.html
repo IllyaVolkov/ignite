@@ -3,6 +3,27 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите функцию, которая принимает 1 параметр.
+        При первом вызове она его запоминает, при втором - суммирует переданный параметр с параметром, переданным при предыдущем вызове. 
+'    
+        Например: 
+        ```
+        sum(3) = 3
+        sum(5) = 8
+        sum(228) = 236 
+        ```    
+    -->
+    <script>
+        function sumArgs(argument) {
+            sumArgs.sum = sumArgs.sum || 0;
+            sumArgs.sum += argument;
+            return sumArgs.sum;
+        }
+        alert(sumArgs(3));
+        alert(sumArgs(5));
+        alert(sumArgs(228));
+    </script>
 </head>
 <body>
 

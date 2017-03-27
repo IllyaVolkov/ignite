@@ -3,6 +3,20 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--
+        Напишите функцию, возвращающую количество собственных вызовов.     
+    -->
+    <script>
+
+        function countCalls() {
+            countCalls.number = countCalls.number || 0;
+            countCalls.number++;
+            return countCalls.number;
+        }
+        alert(countCalls());
+        alert(countCalls());
+
+    </script>
 </head>
 <body>
 

@@ -3,6 +3,38 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте функцию strCount, которая принимает один аргумент (объект) и считает количество свойств строкового типа. 
+
+        Например: 
+        ```
+        strCount({
+          first: "1",
+          second: "2",
+          third: false,
+          fourth: ["anytime",2,3,4],
+          fifth:  null
+          })
+          //возвращает 3
+          ```    
+    -->
+    <script>
+        function strCount(obj) {
+            var counter = 0;
+            for (var item in obj) {
+                if (typeof obj[item] === 'object') counter += strCount(obj[item]);
+                if (typeof obj[item] === 'string') counter++;
+            }
+            return counter;
+        }
+        alert(strCount({
+            first: "1",
+            second: "2",
+            third: false,
+            fourth: ["anytime", 2, 3, 4],
+            fifth: null
+        }));
+    </script>
 </head>
 <body>
 
