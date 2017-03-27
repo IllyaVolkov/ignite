@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>task 1</title>
+	<meta charset="utf-8" />
+    <!--
+        Создайте функцию find(arr, value), которая ищет в массиве arr значение value и возвращает его номер, если найдено, или -1, если не найдено.     
+    -->
+    <script>
+
+        function find(arr, value) {
+            return arr.indexOf(value);
+        }
+
+        var obj = { name: "Illya" };
+        var arr = [1, 2, obj];
+        alert(find(arr, obj));
+        alert(find(arr, {}));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

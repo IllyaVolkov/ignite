@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>task 2</title>
+	<meta charset="utf-8" />
+    <!--
+        ```var arr = [1, 90, 789, 56, 45, 34, 678, 78, -90, -6, 5, 3, 6]; ```
+        Отсортируйте массив arr, используя алгоритм пузырьковой сортировки.     
+    -->
+    <script>
+
+        function bubbleSort(arr) {
+            var tmp;
+            var changed = false;
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                        changed = true;
+                    }
+                }
+                if (!changed) break;
+                changed = false;
+            }
+            return arr;
+        }
+
+        var arr = [1, 90, 789, 56, 45, 34, 678, 78, -90, -6, 5, 3, 6];
+        arr = bubbleSort(arr);
+        alert(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
