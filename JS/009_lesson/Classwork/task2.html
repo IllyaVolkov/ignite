@@ -3,8 +3,61 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте кнопку навигации, которая помогает при прокрутке страницы.
+        Работать должна следующим образом:
+        * Пока страница промотана меньше чем на высоту экрана вниз – кнопка не видна.
+        * При промотке страницы вниз больше, чем на высоту экрана, появляется кнопка «стрелка вверх».
+        * При нажатии на нее страница прыгает вверх, но не только. Дополнительно, кнопка меняется на «стрелка вниз» и при клике возвратит на старое место. Если же в этом состоянии посетитель сам прокрутит вниз больше, чем один экран, то она вновь изменится на «стрелка вверх».
+        Должен получиться удобный навигационный помощник.
+    -->
+    <style>
+        #nav {
+            border: 2px solid blue;
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            bottom: 5%;
+            left:2%;
+            z-index: 1000;
+            background-image: url(up.png);
+            visibility: hidden;
+        }
+        #content {
+            height: 3000px;
+            width:100%;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', load);
+        function load() {
+            document.addEventListener('scroll', scroll);
+            nav = document.getElementById('nav');
+            nav.addEventListener('click', click);
+        }
+        var position = 0;
+        function click() {
+            if (position === 0) {
+                window.scrollTo(0, 0);
+                nav.style.transform = 'rotate(180deg)';
+                position = scrolled;
+            } else {
+                window.scrollTo(0, position);
+            }
+        }
+        function scroll() {
+            scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            if (screen.height < scrolled) {
+                position = 0;
+                nav.style.visibility = 'visible';
+                nav.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
 </head>
 <body>
-
+    <div id="nav"></div>
+    <div id="content"></div>
 </body>
 </html>

@@ -3,8 +3,28 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу с 3 элементами div. Напишите сценарий, который будет произвольно менять положение этиъ элементов на странице каждую секунду.     
+    -->
+    <script>
+        window.onload = function () {
+            var divs = document.getElementsByTagName('div');
+            function replace() {
+                var first = Math.round(Math.random() * 3 - 0.5);
+                document.body.appendChild(divs[first]);
+                var second = first;
+                while (second === first) second = Math.round(Math.random() * 3 - 0.5);
+                document.body.appendChild(divs[second]);
+                for(var i = 0; i<3; i++)
+                    if (i !== first && i !== second) document.body.appendChild(divs[i]);
+            }
+            setInterval(replace, 1000);
+        }
+    </script>
 </head>
 <body>
-
+    <div>Элемент 1</div>
+    <div>Элемент 2</div>
+    <div>Элемент 3</div>
 </body>
 </html>

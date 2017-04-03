@@ -3,8 +3,42 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу с кнопкой.
+        Создайте код, который загрузит на страницу картинку img.jpg (файл находитя в папке classwork) 
+        асинхронно через 5 секунд после нажатия кнопки.     
+    -->
+    <script>
+        function load() {
+            var btn = document.getElementById('btn');
+            btn.addEventListener('click', click);
+        }
+
+        function click() {
+            xhr = new XMLHttpRequest;
+            xhr.open('GET', 'img.jpg', true);
+            xhr.responseType = 'blob';
+            xhr.addEventListener('readystatechange', stateChange);
+            setTimeout(function () { xhr.send(); }, 5000);
+        }
+
+        function stateChange() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var urlCreator = window.URL || window.webkitURL;
+                    var img = document.createElement('img');
+                    img.src = urlCreator.createObjectURL(xhr.response);
+                    document.body.appendChild(img);
+                }
+            }
+        }
+
+        window.addEventListener('load', load);
+
+    </script>
 </head>
 <body>
-
+    <button id="btn">Кнопка!</button>
+    <div id="output"></div>
 </body>
 </html>

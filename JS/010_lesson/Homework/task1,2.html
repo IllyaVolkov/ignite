@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>task 1,2</title>
+	<meta charset="utf-8" />
+    <!--
+        Создайте две HTML страницы с разным контентом. Создайте страницу, в которой находиться сценарий загружающий и отображающий контент двух этих страниц при нажатии на кнопку. 
+        Контент должен загружаться асинхронно.
+        
+        Модифицируйте код  предыдущего задания так, чтобы максимальное время обработки запроса не превышало 20 секунд и при первышении этого времени запрос был отменен, 
+        а пользователь видел на экране сообщение об ошибке.     
+    -->
+    <script>
+        function load() {
+            getPage('some1.html');
+            getPage('some2.html');
+        }
+
+        function getPage(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'document';
+            xhr.addEventListener('readystatechange', stateChange);
+            xhr.timeout = 20000;
+            xhr.ontimeout = function () {
+                alert('Извините, запрос превысил максимальное время');
+            }
+            xhr.send();
+        }
+
+        function stateChange(e) {
+            if (e.target.readyState == 4) {
+                if (e.target.status == 200) {
+                    document.body.appendChild(e.target.response.body);
+                }
+            }
+        }
+
+        window.addEventListener('load', load);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

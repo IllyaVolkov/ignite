@@ -3,8 +3,26 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу. Разместите на странице поле ввода, кнопку и пустой div.  
+        Создайте сценарий, который при нажатии на кнопку будет записывать содержимое поля ввода в пустой div. 
+    -->
+    <script>
+        function load() {
+            var button = document.getElementsByTagName('button')[0];
+            button.addEventListener('click', click);
+        }
+        function click() {
+            var input = document.getElementsByTagName('input')[0];
+            var div = document.getElementsByTagName('div')[0];
+            div.innerHTML = input.value;
+        }
+        window.addEventListener('load', load);
+    </script>
 </head>
 <body>
-
+    <input type="text"/>
+    <button>Кнопка!</button>
+    <div></div>
 </body>
 </html>

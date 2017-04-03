@@ -3,8 +3,58 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу-калькулятор. 
+        Разместите на странице два поля ввода и кнопки для арифметических операций над 
+        данными введенными в поля ввода. Реализуйте данную страницу двумя способами – с использованием модели DOM Level 0 (через атрибуты) и DOM Level 2. 
+    -->
+    <script>
+        function sum(e) {
+            var num1 = parseInt(val1.value, 10);
+            var num2 = parseInt(val2.value, 10);
+            alert(num1 + num2);
+        }
+        function diff(e) {
+            var num1 = parseInt(val1.value, 10);
+            var num2 = parseInt(val2.value, 10);
+            alert(num1 - num2);
+        }
+        function mul(e) {
+            var num1 = parseInt(val1.value, 10);
+            var num2 = parseInt(val2.value, 10);
+            alert(num1 * num2);
+        }
+        function div(e) {
+            var num1 = parseInt(val1.value, 10);
+            var num2 = parseInt(val2.value, 10);
+            alert(num1 / num2);
+        }
+
+        /*window.onload = function () {
+            val1 = document.getElementById('val1');
+            val2 = document.getElementById('val2');
+            document.getElementById('sum').onclick = sum;
+            document.getElementById('diff').onclick = diff;
+            document.getElementById('mul').onclick = mul;
+            document.getElementById('div').onclick = div;
+        }*/
+        function load() {
+            val1 = document.getElementById('val1');
+            val2 = document.getElementById('val2');
+            document.getElementById('sum').addEventListener('click', sum);
+            document.getElementById('diff').addEventListener('click', diff);
+            document.getElementById('mul').addEventListener('click', mul);
+            document.getElementById('div').addEventListener('click', div);
+        }
+        window.addEventListener('load', load);
+    </script>
 </head>
 <body>
-
+    <input type="text" id="val1"/><br />
+    <input type="text" id="val2"/><br />
+    <button id="sum">+</button>
+    <button id="diff">-</button>
+    <button id="mul">*</button>
+    <button id="div">/</button>
 </body>
 </html>

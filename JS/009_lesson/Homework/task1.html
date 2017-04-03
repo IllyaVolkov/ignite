@@ -3,8 +3,32 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Сделайте список, элементы которого можно выделять кликом.
+        Используйте для решения данной задачи свойство e.target.
+    -->
+    <script>
+        window.addEventListener('load', load);
+        function load() {
+            var ul = document.getElementsByTagName('ul')[0];
+            ul.addEventListener('click', click);
+        }
+        function click(e) {
+            var range = document.createRange();
+            range.selectNode(e.target);
+            window.getSelection().addRange(range);
+        }
+    </script>
 </head>
 <body>
-
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
 </body>
 </html>

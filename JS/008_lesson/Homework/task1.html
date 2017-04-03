@@ -3,8 +3,54 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--     
+        Создайте регистрационную форму:  логин, пароль, телефон и кнопка "Отправить".
+        По нажатию на кнопку "Отправить", проверьте корректность ввода данных с помощью JavaScript.
+        1) Логин - не должен содержать цифры.
+        2) Пароль - не дожен содержать знак $.
+        3) Телефон - должен содержать только цифры.
+
+        Закрасьте фон поля ввода в красный цвет, если были введены неправильные данные.
+
+        Используйте для решение данной задачи методы для работы со строками или регулярные выражения: 
+        [link](https://learn.javascript.ru/regexp-introduction) 
+    -->
+    <script>
+        function load() {
+            document.forms[0].addEventListener('submit', click, false);
+        }
+        function click(e) {
+            var login = document.getElementById('login');
+            var password = document.getElementById('password');
+            var phone = document.getElementById('phone');
+
+            login.style.backgroundColor = 'white';
+            password.style.backgroundColor = 'white';
+            phone.style.backgroundColor = 'white';
+
+            if (login.value.search(/[0-9]/) !== -1) {
+                login.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+            if (password.value.search(/\$/) !== -1) {
+                password.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+            if (phone.value.search(/[^0-9]/) !== -1) {
+                phone.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+            
+        }
+        window.addEventListener('load', load);
+    </script>
 </head>
 <body>
-
+    <form action="#" method="post">
+        Login: <input type="text" id="login" name="name" /><br/>
+        Password: <input type="password" id="password" name="password" /><br />
+        Phone: <input type="text" id="phone" name="phone" /><br />
+        <input type="submit" value="Send!" />
+    </form>
 </body>
 </html>

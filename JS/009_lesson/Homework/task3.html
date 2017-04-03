@@ -3,8 +3,45 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу с двумя полями ввода, кнопкой и элементом div с шириной и высотой 50px. 
+        Создайте сценарий, который по нажатию на кнопку будет перемещать div в координаты, указанные в полях ввода. 
+        В случае, если при нажатии кнопки хотя бы одно из полей ввода не заполнено, пользователь должен получить предупреждение, 
+        а событие click должно быть отменено. 
+    -->
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var x = document.getElementById('x');
+            var y = document.getElementById('y');
+            var button = document.getElementById('btn');
+            var div = document.getElementById('div');
+            function click() {
+                var xval = x.value;
+                var yval = y.value;
+                if (!xval || !yval) {
+                    alert('Не все поля заполнены!');
+                    return false;
+                }
+                div.style.top = yval + 'px';
+                div.style.left = xval + 'px';
+            }
+            button.addEventListener('click', click);
+            
+        }
+    </script>
 </head>
 <body>
-
+    X:<input type="text" id="x" />
+    Y:<input type="text" id="y" />
+    <button id="btn">Кнопка</button>
+    <div id="div"></div>
 </body>
 </html>

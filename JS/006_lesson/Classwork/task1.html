@@ -3,8 +3,44 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Код для задачи: 
+        ```
+        <body>
+          <div>Пользователи:</div>
+          <ul>
+            <li>user1</li>
+            <li>user2</li>
+          </ul>
+
+          <script>
+            // ... ваш код
+          </script>
+
+        </body>
+
+        ``` 
+
+        Задание: 
+
+        * Напишите код, который получит объект для тега head и запишет его в переменную.
+        * Напишите код, который получит объект для тега ul и запишет его в переменную.
+        * Напишите код, который получит объект для второго тега li и запишет его в переменную. 
+
+    -->
 </head>
 <body>
+    <div>Пользователи:</div>
+    <ul>
+        <li>user1</li>
+        <li>user2</li>
+    </ul>
+
+    <script>
+        var head = document.getElementsByTagName('head')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        var li2 = document.getElementsByTagName('li')[1];
+    </script>
 
 </body>
 </html>

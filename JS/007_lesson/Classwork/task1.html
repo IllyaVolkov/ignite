@@ -3,8 +3,39 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу. Разместите на ней произвольное количеством элементов. 
+        Разработайте сценарий, который будет по очереди перемещать span с текстом и интервалом в 400мс:
+        1) Перед элементом.
+        2) Внутри элемента перед тектом
+        3) Внетри элемента после текста.
+        4) После элемента.
+    -->
+    <script>
+        window.onload = function () {
+            var elem = document.getElementById('id1');
+            var span = document.createElement('span');
+            span.innerHTML = " Inserted text ";
+            
+            function insert() {
+                insert.counter = insert.counter || 0;
+                var param;
+                switch (insert.counter % 4) {
+                    case 0: param = "beforeBegin"; break;
+                    case 1: param = "afterBegin"; break;
+                    case 2: param = "beforeEnd"; break;
+                    case 3: param = "afterEnd"; break;
+                    default: param = null;
+                }
+                elem.insertAdjacentElement(param, span);
+                insert.counter++;
+            }
+           var timer =  setInterval(insert, 400);
+           setTimeout(function () { clearInterval(timer)}, 1610);
+        }
+    </script>
 </head>
 <body>
-
+    <div id="id1">Some text</div>
 </body>
 </html>

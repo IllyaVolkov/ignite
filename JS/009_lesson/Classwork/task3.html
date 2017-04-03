@@ -3,8 +3,22 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте поле ввода. При помощи событий клавиатуры сделайте так, чтобы в поле можно было вводить только цифры. 
+    -->
+    <script>
+        window.addEventListener('load', load);
+        function load() {
+            var field = document.getElementById('field');
+            field.addEventListener('focus', function () { document.addEventListener('keypress', pressCheck); });
+            field.addEventListener('blur', function () { document.removeEventListener('keypress', pressCheck); });
+        }
+        function pressCheck(e) {
+            if (48 > e.charCode || 57 < e.charCode) {e.preventDefault(); return false; }
+        }
+    </script>
 </head>
 <body>
-
+    <input type="text" id="field" />
 </body>
 </html>

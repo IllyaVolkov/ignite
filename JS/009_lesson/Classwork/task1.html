@@ -3,6 +3,24 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу. Реализуйте следующее: 
+        * При нажатии комбинации клавиш ctrl + a (регистр не учитывается!) на экран выводится сообщение ‘Данные выбраны’; 
+        * При нажатии комбинации клавиш ctrl + s (регистр не учитывается!) на экран выводится сообщение ‘Данные сохранены’; 
+    -->
+    <script>
+        function downEvent(e) {
+            if (e.ctrlKey === true) {
+                if (e.keyCode === 83)
+                    alert('Данные сохранены');
+                else if (e.keyCode === 65)
+                    alert('Данные выбраны');
+                e.preventDefault();
+                return false;
+            }
+        }
+        document.addEventListener('keydown', downEvent);
+    </script>
 </head>
 <body>
 

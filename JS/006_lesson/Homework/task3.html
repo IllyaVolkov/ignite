@@ -3,8 +3,37 @@
 <head>
     <title>task 3</title>
 	<meta charset="utf-8" />
+    <!--
+        Метод elem.closest(css) для поиска ближайшего родителя, удовлетворяющего селектору css, не поддерживается некоторыми браузерами, например IE11-.
+        Создайте для него полифилл.    
+    -->
+    <script>
+
+    window.onload = function() {
+        if (document.documentElement.closest !== undefined) {
+
+            Object.defineProperty(Element.prototype, 'closest',
+                function (css) {
+                    var el = this.parentElement;
+                    do {
+                        if (el.matches(css)) {
+                            return el;
+                        }
+                    el = el.parentElement;
+                    } while (el);
+                    return null;
+                });
+        }
+        alert(document.getElementsByClassName('c2')[0].closest('.c1'));
+
+}
+    </script>
 </head>
 <body>
-
+    <div class="c1">
+        <ol>
+            <li class= "c2"></li>
+        </ol>
+    </div>
 </body>
 </html>

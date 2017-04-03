@@ -3,8 +3,42 @@
 <head>
     <title>task 1</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте страницу. Разместите на странице 5 элементов div и кнопку. 
+        Создайте CSS файл, определите в файле правила, которые зададут всем дивам следующее оформление – высота и ширина 100 px, float=left и зеленый цвет фона. 
+        Создайте сценарий, который будет обрабатывать нажатие по кнопке и менять цвет одного из дивов на красный. 
+        Смена цвета должна происходить циклически, при первом нажатии первый div становиться красный остальные остаются зелеными, при нажатии на второй – все div становятся зелеными, а второй красный и т.д. 
+    -->
+    <script>
+        function load() {
+            divs = document.getElementsByTagName('div');
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.width = '100px';
+                divs[i].style.height = '100px';
+                divs[i].style.float = 'left';
+                divs[i].style.backgroundColor = 'green';
+            }
+            var button = document.getElementsByTagName('button')[0];
+            button.addEventListener('click', click);
+        }
+        function click() {
+            click.counter = click.counter || 0;
+            for (var i = 0; i < divs.length; i++) {
+                if (i === click.counter % divs.length) divs[i].style.backgroundColor = 'red';
+                if (i === (click.counter - 1) % divs.length) divs[i].style.backgroundColor = 'green';
+            }
+            click.counter++;
+        }
+        window.addEventListener('load', load);
+        
+    </script>
 </head>
 <body>
-
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button>Кнопка!</button>
 </body>
 </html>

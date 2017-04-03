@@ -3,6 +3,37 @@
 <head>
     <title>task 2</title>
 	<meta charset="utf-8" />
+    <!--
+        Создайте код, который загрузит файл phones.json и выведет все названия телефонов из него в виде списка. 
+        (файлы для задачи находятся в папке task_phone);     
+    -->
+    <script>
+        function load() {
+            xhr = new XMLHttpRequest;
+            xhr.open('GET', 'task_phone/phones.json', true);
+            xhr.responseType = 'json';
+            xhr.addEventListener('readystatechange', stateChange);
+            xhr.send();
+        }
+
+        function stateChange() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var phones = xhr.response;
+                    var ul = document.createElement('ul');
+                    for (var i = 0; i < phones.length; i++) {
+                        var li = document.createElement('li');
+                        li.innerHTML = phones[i].name;
+                        ul.appendChild(li);
+                    }
+                    document.body.appendChild(ul);
+                }
+            }
+        }
+
+        window.addEventListener('load', load);
+
+    </script>
 </head>
 <body>
 
