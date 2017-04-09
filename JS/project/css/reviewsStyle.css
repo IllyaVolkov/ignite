@@ -1,0 +1,32 @@
+﻿.reviews {
+    background: #131a1d;
+    height: auto;
+    padding: 66px 0 69px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.reviews p {
+    display: none;
+    font-size: 18px;
+}
+
+#reviewMenu p {
+    font-size: 15px;
+}
+
+#reviewButtons {
+    margin: 25px auto 0 auto;
+    height: 5px;
+    width: 48px;
+}
+
+#reviewButtons div {
+    float: left;
+    margin: 0 7px 0 0;
+    background: #fff;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+}

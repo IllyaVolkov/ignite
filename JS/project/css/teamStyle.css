@@ -1,0 +1,130 @@
+﻿.team {
+    background: #fbfbfb;
+    padding: 60px 0 0 0;
+    width: 100%;
+    text-align: center;
+}
+
+.team h2 {
+    color: black;
+    padding-bottom: 26px;
+}
+
+.workers {
+    margin: 60px auto 45px auto;
+    background: #ffffff;
+    border-bottom: 2px solid #dfe4e5;
+    width: 270px;
+    cursor: pointer;
+}
+
+.workers img {
+    height: 250px;
+    width: 270px;
+}
+
+.workers h3 {
+    color: #ffe600;
+    font-size: 18px;
+    padding: 18px 0 0 0;
+}
+
+.workers p {
+    padding: 14px 0 18px 0;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 18px 25px;
+    border-color: transparent transparent #131316 transparent;
+    position: relative;
+    margin:0 auto;
+}
+
+.teamInfo {
+    background: #131316;
+    padding: 65px 0 40px 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.teamInfo .col-lg-8{
+    display: none;
+}
+
+.teamInfo h3{
+    color: #ffe600;
+    font-size: 18px;
+    float: left;
+}
+
+.teamInfo .closeButton {
+    float: right;
+    cursor:pointer;
+}
+
+.teamInfo p {
+    float: left;
+    text-align: left;
+    padding: 24px 0 30px 0;
+}
+
+.teamInfo .link {
+    float: left;
+    margin-right: 25px;
+}
+
+.skills {
+    background: #131a1d;
+    padding: 65px 0 0 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.skills p {
+    padding: 25px 0 60px 0;
+}
+
+.skillItem {
+    margin: 0 auto;
+    width: 142px;
+}
+
+.circle {
+    height: 142px;
+    width: 142px;
+    margin: 0;
+    position:relative;
+}
+
+.circle p{
+    color: #ffe600;
+    font-size: 30px;
+    padding: 50px 0;
+}
+
+.skillItem > p{
+    padding: 25px 0 0 0;
+    font-size: 18px;
+    color: #ffe600;
+    font-family: Oswald-Regular, sans-serif;
+}
+
+.skills .col-lg-3 {
+    margin: 0 auto 65px 0;
+}
+
+.skills .row {
+    display: none;
+}
+
+.circleFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}

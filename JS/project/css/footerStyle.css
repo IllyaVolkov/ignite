@@ -1,0 +1,30 @@
+﻿footer {
+    width: 100%;
+    height: 180px;
+    background: #131316;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Oswald-Light, sans-serif;
+    padding-top: 23px;
+    padding-bottom: 10px;
+}
+
+.links img{
+    margin: 10px;
+}
+
+.links {
+    width: 190px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.up {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}

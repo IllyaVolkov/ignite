@@ -1,0 +1,30 @@
+﻿.statistics {
+    background: #131316;
+    padding: 64px 0 54px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.statistics p{
+    margin: 25px 0 50px 0;
+}
+
+.numbers {
+    border: 1px solid #ffe600;
+    height: 140px;
+    width: 100%;
+    padding: 22px;
+    margin: 10px auto;
+}
+
+.numbers p {
+    color: #ffe600;
+    font-size: 15px;
+    padding-top: 17px;
+    margin: 0;
+}
+
+.numbers b {
+    font-size: 37px;
+}

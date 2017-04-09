@@ -1,0 +1,47 @@
+﻿.send {
+    background: #131a1d;
+    height: auto;
+    padding: 65px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.send p {
+    margin-bottom:65px;
+}
+
+.send h2 {
+    padding-bottom: 25px;
+}
+
+input[type="text"], textarea {
+    border: 1px solid white;
+    background:none;
+    width: 100%;
+    margin:0 auto 28px auto;
+    font-size: 14px;
+    padding: 20px 18px;
+}
+
+textarea {
+    height: 220px;
+    overflow:hidden;
+    resize: none;
+}
+
+button[type="submit"] {
+    background-image: url(../img/send.png);
+    border: none;
+    height: 58px;
+    width: 204px;
+    margin: 0 auto;
+}
+
+#warning {
+    border: 1px solid #ffe600;
+    margin-bottom: 28px;
+    padding: 20px 18px;
+    color: #ffe600;
+    display: none;
+}
