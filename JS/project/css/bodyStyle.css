@@ -36,6 +36,18 @@ h2 {
     padding: 0;
 }
 
+a {
+    color: #ffe600;
+}
+
+a:hover {
+    color: #ccb300;
+}
+
+a:visited {
+    color: #eed500;
+}
+
 h3 {
     font-size: 15px;
     font-family: Oswald-Regular, sans-serif;

@@ -4,7 +4,7 @@
 }
 
 function countNumbers(e) {
-    if (window.pageYOffset > numbers[0].scrollTop) {
+    if (window.scrollY + screen.height > numbers[0].getBoundingClientRect().top - document.body.getBoundingClientRect().top) {
         for (var i = 0; i < numbers.length; i++) countNumberIndex(i);
         window.removeEventListener('scroll', countNumbers);
     }

@@ -16,17 +16,22 @@
     var closeButtons = document.getElementsByClassName('closeButton');
     for (var i = 0; i < closeButtons.length; i++)
         closeButtons[i].addEventListener('click', function () { this.parentElement.style.display = 'none'; });
+
+    triangles = document.getElementsByClassName('triangle');
+    triangles[0].style.display = 'block';
 }
 
 function selectWorker(e) {
     for (var i = 0; i < workerInfos.length; i++) {
         workerInfos[i].style.display = 'none';
         workerSkills[i].style.display = 'none';
+        triangles[i].style.display = 'none';
     }
     var i = 0;
     while (this !== workers[i]) i++;
     workerInfos[i].style.display = 'block';
     workerSkills[i].style.display = 'block';
+    triangles[i].style.display = 'block';
     scrollAll(workerSkills[i]);
 }
 
