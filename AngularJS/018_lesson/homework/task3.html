@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Создайте директиву dialogBox, которая будет выводить на экран в диалоговом окне содержимое элемента, к которому привязана директива. 
+    -->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task3", [])
+        .directive('dialogBox', function () {
+            return {
+                restrict: 'A',
+                compile: function () {
+                    return {
+                        post: function postLink(scope, elem, attrs) {
+                            alert(elem.html());
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div dialog-box><p>hell</p></div>
+</body>
+</html>

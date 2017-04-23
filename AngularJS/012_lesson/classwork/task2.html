@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Используйте таблицу с данными массива items из предыдущей задачи. Реализуйте следующее:
+    * Добавьте на страницу 5 элементов checkbox с именами свойств элементов массива items(name, price и т.д.)
+    * Нажатие на каждый из checkbox скрывает/отображает соответствующее свойство элементов массива items в таблице 
+    * Используйте директиву ng-switch
+    -->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        angular.module("task2", []).controller("bodyCtrl", function ($scope) {
+            $scope.items = [
+             { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+             { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+             { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+             { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+            $scope.mode = {
+                name: false,
+                price: false,
+                category: false,
+                count: false,
+                tax: false,
+                expiration: false
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <b>Name</b>
+    <input type="checkbox" ng-model="mode.name"/><br />
+    <b>Price</b>
+    <input type="checkbox" ng-model="mode.price"/><br />
+    <b>Category</b>
+    <input type="checkbox" ng-model="mode.category"/><br />
+    <b>Count</b>
+    <input type="checkbox" ng-model="mode.count" /><br />
+    <b>Tax</b>
+    <input type="checkbox" ng-model="mode.tax"/><br />
+    <b>Expiration</b>
+    <input type="checkbox" ng-model="mode.expiration"/><br />
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Count</th>
+            <th>Tax</th>
+            <th>Expiration</th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td ng-switch="mode.name" ><span ng-switch-when="true">{{item.name}}</span></td>
+            <td ng-switch="mode.price"><span ng-switch-when="true">{{item.price}}</span></td>
+            <td ng-switch="mode.category" ><span ng-switch-when="true">{{item.category}}</span></td>
+            <td ng-switch="mode.count" ><span ng-switch-when="true">{{item.count}}</span></td>
+            <td ng-switch="mode.tax" ><span ng-switch-when="true">{{item.tax}}</span></td>
+            <td ng-switch="mode.expiration" ><span ng-switch-when="true">{{item.expiration}}</span></td>
+        </tr>
+    </table>
+</body>
+</html>

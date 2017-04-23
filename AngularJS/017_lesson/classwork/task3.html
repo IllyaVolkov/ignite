@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Для формы из предыдущей задачи добавьте валидацию на AngularJS. Используйте регулярные выражения.-->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script type="text/ng-template" id="customTemplate">
+        <form name="data.name">
+            <label>Username: </label>
+            <input type="text" ng-model="data.username" ng-pattern="regex.nameRegex">
+            <br />
+            <label>Login: </label>
+            <input type="text" ng-model="data.login" ng-pattern="regex.loginRegex">
+            <br />
+            <label>Password: </label>
+            <input type="password" ng-model="data.password" ng-pattern="regex.passRegex">
+            <br />
+            <label>Email: </label>
+            <input type="text" ng-model="data.email" ng-pattern="regex.emailRegex">
+            <br />
+        </form>
+    </script>
+    <script>
+        angular.module("task3", []).controller("bodyController", function ($scope) {
+            $scope.name = 'myForm';
+            $scope.Regex = {};
+            $scope.Regex.nameRegex = /^.{3,20}$/;
+            $scope.Regex.loginRegex = /^[a-zA-Z_]+$/;
+            $scope.Regex.emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+            $scope.Regex.passRegex = /^.{8, 20}$/;
+            $scope.myForm = {
+                name: 'myForm',
+                username: 'vasya',
+                login: 'vasya',
+                email: 'vasya@mail.ru',
+                password: '12345678'
+            }
+        })
+        .directive('formRegistration', function () {
+            return {
+                template: function () {
+                    return angular.element(document.querySelector("#customTemplate")).html();
+                },
+                scope: {
+                    data: "=source",
+                    regex: "=regex"
+                }
+            }
+        });
+    </script>
+    <style>
+        form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+
+        form .ng-invalid.ng-dirty {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body ng-controller="bodyController">
+    <div form-registration="name" source="myForm" regex="Regex"></div>
+</body>
+</html>

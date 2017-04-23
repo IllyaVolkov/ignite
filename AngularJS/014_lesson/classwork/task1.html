@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+    <head>
+        <title>task 1</title>
+        <!--Создайте страницу с кнопкой. Разработайте сервис, который будет считать количество кликов по кнопке и выводить его в консоль. 
+            Используйте фабричную функцию для создания сервиса. -->
+        <meta charset="utf-8" />
+        <link href="../Libraries/bootstrap.css" rel="stylesheet"/>
+        <script src="../Libraries/angular.js"></script>
+        <script>
+            angular.module('task1', [])
+            .controller('bodyCtrl', ['$scope', 'myService', function ($scope, myService) {
+                $scope.countClicks = function () {
+                    myService();
+                }
+            }])
+            .factory('myService', function () {
+                var counter = 1;
+                return function () {
+                    console.log(counter++);
+                };
+            });
+        </script>
+    </head>
+    <body ng-controller="bodyCtrl">
+        <input type="button" value="count++" ng-click="countClicks()"/>
+    </body>
+</html>

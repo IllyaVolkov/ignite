@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <title>task 3</title>
+    <!--Используйте сервис $http для получения данных из файла data.json, который находится в папке data. 
+        Отобразите полученные данные на странице в виде таблицы. Предусмотрите обработку ошибок в запросе (используя Promise).-->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module('task3', [])
+        .controller('bodyCtrl', function ($scope, $http) {
+            $scope.items = {};
+            $scope.getData = function () {
+                $http.get('data/data.json').then(success, error);
+            }
+            function success(response) {
+                alert('Success!');
+                $scope.items = response.data;
+            }
+            function error() {
+                alert('Error!');
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input type="button" ng-click="getData()" value="Get data!"/>
+    <table class="table">
+        <tr>
+            <th>Name:</th>
+            <th>Price:</th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+        </tr>
+    </table>
+</body>
+</html>

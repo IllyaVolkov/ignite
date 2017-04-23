@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <title>task 3</title>
+    <!--Разработайте приложение-секундомер. На странице должно быть 3 кнопки: 
+    * start – начать отсчет 
+    * stop – остановить отсчет 
+    * clear – сброс отсчета-->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script src="ngCookies.js"></script>
+    <script>
+        angular.module('task3', [])
+        .controller('bodyCtrl', function ($scope, $interval) {
+            $scope.output = 0;
+            var promise = null;
+            $scope.start = function () {
+                $interval.cancel(promise);
+                promise = $interval(function () { $scope.output++; }, 1000);
+            }
+            $scope.stop = function () {
+                $interval.cancel(promise);
+            }
+            $scope.clear = function () {
+                $scope.output = 0;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input type="button" value="start" ng-click="start()" />
+    <input type="button" value="stop" ng-click="stop()" />
+    <input type="button" value="clear" ng-click="clear()" />
+    <h3>{{output}}</h3>
+</body>
+</html>

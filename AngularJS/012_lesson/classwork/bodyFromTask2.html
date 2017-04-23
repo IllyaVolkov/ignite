@@ -1,0 +1,30 @@
+﻿<b>Name</b>
+<input type="checkbox" ng-model="mode.name" /><br />
+<b>Price</b>
+<input type="checkbox" ng-model="mode.price" /><br />
+<b>Category</b>
+<input type="checkbox" ng-model="mode.category" /><br />
+<b>Count</b>
+<input type="checkbox" ng-model="mode.count" /><br />
+<b>Tax</b>
+<input type="checkbox" ng-model="mode.tax" /><br />
+<b>Expiration</b>
+<input type="checkbox" ng-model="mode.expiration" /><br />
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Count</th>
+        <th>Tax</th>
+        <th>Expiration</th>
+    </tr>
+    <tr ng-repeat="item in items">
+        <td ng-switch="mode.name"><span ng-switch-when="true">{{item.name}}</span></td>
+        <td ng-switch="mode.price"><span ng-switch-when="true">{{item.price}}</span></td>
+        <td ng-switch="mode.category"><span ng-switch-when="true">{{item.category}}</span></td>
+        <td ng-switch="mode.count"><span ng-switch-when="true">{{item.count}}</span></td>
+        <td ng-switch="mode.tax"><span ng-switch-when="true">{{item.tax}}</span></td>
+        <td ng-switch="mode.expiration"><span ng-switch-when="true">{{item.expiration}}</span></td>
+    </tr>
+</table>

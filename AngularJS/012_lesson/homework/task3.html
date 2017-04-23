@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Реализуйте SPA приложение, в котором пользователю представляется пройти тест из 5 вопросов, в каждом вопросе по 4 варианта ответа. 
+        Вопросы должны выбираться с помощью radio-button и когда выбран, например, вопрос №1, то на странице должны появится варианты ответа 
+        только для этого вопроса. В конце тестирования отобразите результат теста. При решении данной задачи используйте директиву ng-switch.-->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        angular.module("task3", []).controller("bodyCtrl", function ($scope) {
+            $scope.questions = [
+             { text: "Question1", name: "Question1", a: "Answer A", b: "Answer B", c: "Answer C", d: "Answer D", answer: '', correct: "A" },
+             { text: "Question2", name: "Question2", a: "Answer A", b: "Answer B", c: "Answer C", d: "Answer D", answer: '', correct: "B" },
+             { text: "Question3", name: "Question3", a: "Answer A", b: "Answer B", c: "Answer C", d: "Answer D", answer: '', correct: "A" },
+             { text: "Question4", name: "Question4", a: "Answer A", b: "Answer B", c: "Answer C", d: "Answer D", answer: '', correct: "D" },
+             { text: "Question5", name: "Question5", a: "Answer A", b: "Answer B", c: "Answer C", d: "Answer D", answer: '', correct: "C" }
+            ];
+            $scope.selected = '';
+            $scope.submit = function () {
+                var counter = 0;
+                for (item in $scope.questions) {
+                    if ($scope.questions[item].answer === $scope.questions[item].correct) counter++;
+                }
+                alert('Your score: ' + counter);
+            }
+            $scope.changeValue = function (val) {
+                $scope.selected = val;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <form ng-submit="submit()" ng-switch="selected">
+        <div>
+            <h2 ng-click="changeValue(questions[0].name)">{{questions[0].text}}</h2>
+            <p ng-switch-when="Question1">{{questions[0].a}}<input type="radio" name="{{questions[0].name}}" ng-model="questions[0].answer" value="A" /></p>
+            <p ng-switch-when="Question1">{{questions[0].b}}<input type="radio" name="{{questions[0].name}}" ng-model="questions[0].answer" value="B" /></p>
+            <p ng-switch-when="Question1">{{questions[0].c}}<input type="radio" name="{{questions[0].name}}" ng-model="questions[0].answer" value="C" /></p>
+            <p ng-switch-when="Question1">{{questions[0].d}}<input type="radio" name="{{questions[0].name}}" ng-model="questions[0].answer" value="D" /></p>
+        </div>
+        <div>
+            <h2 ng-click="changeValue(questions[1].name)">{{questions[1].text}}</h2>
+            <p ng-switch-when="Question2">{{questions[1].a}}<input type="radio" name="{{questions[1].name}}" ng-model="questions[1].answer" value="A" /></p>
+            <p ng-switch-when="Question2">{{questions[1].b}}<input type="radio" name="{{questions[1].name}}" ng-model="questions[1].answer" value="B" /></p>
+            <p ng-switch-when="Question2">{{questions[1].c}}<input type="radio" name="{{questions[1].name}}" ng-model="questions[1].answer" value="C" /></p>
+            <p ng-switch-when="Question2">{{questions[1].d}}<input type="radio" name="{{questions[1].name}}" ng-model="questions[1].answer" value="D" /></p>
+        </div>
+        <div>
+            <h2 ng-click="changeValue(questions[2].name)">{{questions[2].text}}</h2>
+            <p ng-switch-when="Question3">{{questions[2].a}}<input type="radio" name="{{questions[2].name}}" ng-model="questions[2].answer" value="A" /></p>
+            <p ng-switch-when="Question3">{{questions[2].b}}<input type="radio" name="{{questions[2].name}}" ng-model="questions[2].answer" value="B" /></p>
+            <p ng-switch-when="Question3">{{questions[2].c}}<input type="radio" name="{{questions[2].name}}" ng-model="questions[2].answer" value="C" /></p>
+            <p ng-switch-when="Question3">{{questions[2].d}}<input type="radio" name="{{questions[2].name}}" ng-model="questions[2].answer" value="D" /></p>
+        </div>
+        <div>
+            <h2 ng-click="changeValue(questions[3].name)">{{questions[3].text}}</h2>
+            <p ng-switch-when="Question4">{{questions[3].a}}<input type="radio" name="{{questions[3].name}}" ng-model="questions[3].answer" value="A" /></p>
+            <p ng-switch-when="Question4">{{questions[3].b}}<input type="radio" name="{{questions[3].name}}" ng-model="questions[3].answer" value="B" /></p>
+            <p ng-switch-when="Question4">{{questions[3].c}}<input type="radio" name="{{questions[3].name}}" ng-model="questions[3].answer" value="C" /></p>
+            <p ng-switch-when="Question4">{{questions[3].d}}<input type="radio" name="{{questions[3].name}}" ng-model="questions[3].answer" value="D" /></p>
+        </div>
+        <div>
+            <h2 ng-click="changeValue(questions[4].name)">{{questions[4].text}}</h2>
+            <p ng-switch-when="Question5">{{questions[4].a}}<input type="radio" name="{{questions[4].name}}" ng-model="questions[4].answer" value="A" /></p>
+            <p ng-switch-when="Question5">{{questions[4].b}}<input type="radio" name="{{questions[4].name}}" ng-model="questions[4].answer" value="B" /></p>
+            <p ng-switch-when="Question5">{{questions[4].c}}<input type="radio" name="{{questions[4].name}}" ng-model="questions[4].answer" value="C" /></p>
+            <p ng-switch-when="Question5">{{questions[4].d}}<input type="radio" name="{{questions[4].name}}" ng-model="questions[4].answer" value="D" /></p>
+        </div>
+        <input type="submit" value="Send!"/>
+    </form>
+</body>
+</html>

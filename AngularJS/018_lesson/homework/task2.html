@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Создайте две директивы. Первая создает список ul с произвольным количеством элементов. Вторая директива добавляет четным элементам списка CSS класс ‘red’ со следующим значением: 
+        ```
+        .red {
+        color: red
+        }
+        ```
+        Обе директивы используются в качестве атрибутов и применяются к одному и тому же элементу. При решении задачи используйте приоритет директив.-->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script type="text/ng-template" id="myTemplate">
+        <p ng-repeat="item in list">{{item}}</p>
+    </script>
+    <script>
+        angular.module("task2", []).controller("listCtrl", function ($scope) {
+            $scope.list = [
+               "elem 1",
+               "elem 2",
+               "elem 3",
+               "elem 4",
+               "elem 5",
+               "elem 6",
+               "elem 7",
+               "elem 8"
+            ];
+        })
+        .directive('list', function () {
+            return {
+                restrict: 'A',
+                replace: true,
+                template: function () {
+                    return angular.element(document.querySelector("#myTemplate")).html();
+                },
+                controller: 'listCtrl',
+                priority: 2
+        }
+        })
+        .directive('color', function () {
+            return {
+                restrict: 'A',
+                require: 'list',
+                link: function (scope, elem, attrs) {
+                    this.counter = this.counter || 0;
+                    if (this.counter++ % 2 === 0) {
+                        elem.attr('class', 'red');
+                    }
+                },
+                priority: 1
+            }
+        });
+    </script>
+    <style>
+        .red {
+        color: red
+        }
+    </style>
+</head>
+<body>
+    <div list="list" color></div>
+</body>
+</html>

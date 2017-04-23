@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ToDo List">
+<head>
+    <!--Создайте приложение с интерфейсом показанном в файле template.png. Файл находится в папке Task. 
+        Напишите сервис, который после каждого изменения формы, будет создавать JSON обьект с новыми данными и отправлять на сервер. 
+        Выведите подготовленный к отправке объект на экран.-->
+    <title>ToDo List (Task2)</title>
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+
+        // Добавьте AngularJS контроллер
+        var model = [];
+
+        angular.module("ToDo List", []).controller("bodyCtrl", function ($scope, $http, sendService) {
+            $scope.data = model;
+
+            $scope.click = function () {
+                var newRow = {
+                    name: $scope.name,
+                    description: $scope.description,
+                    date: $scope.date,
+                    completed: $scope.completed
+                }
+                model.push(newRow);
+                sendService($http, $scope.data, 'server.js');
+            }
+
+            $scope.edit = function (row) {
+                row.name = $scope.name;
+                row.description = $scope.description;
+                row.date = $scope.date;
+                row.completed = $scope.completed;
+                sendService($http, $scope.data, 'server.js');
+            }
+        })
+        .factory('sendService', function () {
+            return function ($http, data, url) {
+                var output = JSON.stringify(data);
+                alert(output);
+                $http.put(url, output).then(function () {
+                    alert('Success!!!');
+                },
+                function () {
+                    alert('Failed to send data!');
+                });
+            };
+        })
+
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <div class="container">
+        <h3>ToDo List</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="row in data">
+                <td>{{row.name}}</td>
+                <td>{{row.description}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.completed}}</td>
+                <td><button class="btn btn-default" ng-click="edit(row)">Edit</button></td>
+            </tr>
+        </table>
+        <div class="input-group">
+            <b>Name</b><br />
+            <input class="form-control" ng-model="name" />
+            <b>Due Date</b><br />
+            <input class="form-control" ng-model="date" />
+            <b>Description</b><br />
+            <textarea class="form-control" ng-model="description"></textarea>
+            <b>Completed</b><br />
+            <input type="checkbox" ng-model="completed" /><br />
+            <button class="btn btn-default" ng-click="click()">Add</button>
+        </div>
+    </div>
+</body>
+</html>

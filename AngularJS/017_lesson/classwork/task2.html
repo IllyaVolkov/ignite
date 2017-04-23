@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Создайте директиву, которая создает форму и добавляет ее на страницу. В форме должны быть следующие поля: 
+        Username, login, password, email. -->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task2", []).controller("bodyController", function ($scope) {
+            $scope.name = 'myForm';
+        })
+        .directive('formRegistration', function () {
+            return function (scope, element) {
+                    var form = angular.element('<form name="'+scope.name+'">');
+                    element.append(form);
+                    form.append(angular.element('<span>').text('Username: '));
+                    form.append(angular.element('<input type="text" name="username">'));
+                    form.append(angular.element('<br>'));
+                    form.append(angular.element('<span>').text('Login: '));
+                    form.append(angular.element('<input type="text" name="login">'));
+                    form.append(angular.element('<br>'));
+                    form.append(angular.element('<span>').text('Password: '));
+                    form.append(angular.element('<input type="password" name="password">'));
+                    form.append(angular.element('<br>'));
+                    form.append(angular.element('<span>').text('Email: '));
+                    form.append(angular.element('<input type="text" name="email">'));
+                    form.append(angular.element('<br>'));
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyController">
+    <div form-registration="name"></div>
+</body>
+</html>

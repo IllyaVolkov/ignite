@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте сервис, который предоставляет стандартные математические операции – сложение, умножение и т.д. 
+        Используйте три разных способа для создания сервиса.-->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        var module = angular.module('task1', [])
+        .controller('bodyCtrl', function ($scope, mathService, mathService1, mathService2) {
+            $scope.sum = function () {
+                alert(mathService(+$scope.val1, +$scope.val2).sum);
+                //alert(mathService1.sum(+$scope.val1, +$scope.val2));
+                //alert(mathService2(+$scope.val1, +$scope.val2).sum);
+            }
+            $scope.diff = function () {
+                alert(mathService(+$scope.val1, +$scope.val2).diff);
+                //alert(mathService1.diff(+$scope.val1, +$scope.val2));
+                //alert(mathService2(+$scope.val1, +$scope.val2).diff);
+            }
+            $scope.mult = function () {
+                alert(mathService(+$scope.val1, +$scope.val2).mult);
+                //alert(mathService1.mult(+$scope.val1, +$scope.val2));
+                //alert(mathService2(+$scope.val1, +$scope.val2).mult);
+            }
+            $scope.div = function () {
+                alert(mathService(+$scope.val1, +$scope.val2).div);
+                //alert(mathService1.div(+$scope.val1, +$scope.val2));
+                //alert(mathService2(+$scope.val1, +$scope.val2).div);
+            }
+        })
+        .factory('mathService', function () {
+            return function (val1, val2) {
+                return {
+                    sum: val1 + val2,
+                    diff: val1 - val2,
+                    mult: val1 * val2,
+                    div: val1 / parseFloat(val2)
+                };
+            };
+        });
+
+        module.service('mathService1', function () {
+            this.sum = function (val1, val2) {
+                return val1 + val2;
+            }
+            this.diff = function (val1, val2) {
+                return val1 - val2;
+            }
+            this.mult = function (val1, val2) {
+                return val1 * val2;
+            }
+            this.div = function (val1, val2) {
+                return val1 / parseFloat(val2);
+            }
+        });
+
+        module.provider('mathService2', function () {
+            return {
+                $get: function () {
+                    return function (val1, val2) {
+                        return {
+                            sum: val1 + val2,
+                            diff: val1 - val2,
+                            mult: val1 * val2,
+                            div: val1 / parseFloat(val2)
+                        };
+                    };
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input ng-model="val1" type="text" />
+    <input ng-model="val2" type="text" />
+    <input type="button" ng-click="sum()" value="+" />
+    <input type="button" ng-click="diff()" value="-" />
+    <input type="button" ng-click="mult()" value="*" />
+    <input type="button" ng-click="div()" value="/" />
+</body>
+</html>

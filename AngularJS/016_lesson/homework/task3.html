@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <title>task 3</title>
+    <!--
+        Добавьте на страницу следующий функционал: 
+        * При клике по элементу списка на странице home, пользователь перенаправляется на страницу contact по адресу ‘/contact + routeParams’, 
+        где routeParams – параметры маршрутизации, созданные с помощью сервиса $routeParams, представляющие собой значения свойств массива 
+        people для элемента, по которому кликнул пользователь. 
+        * Используйте данные, переданные через $routeParams, для автозаполнения формы на странице contact 
+    -->
+    <base href="/" />
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script src="../Libraries/angular_route.js"></script>
+    <script>
+        angular.module('task3', ['ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/home', {
+                templateUrl: 'homework/Task/home.html',
+                controller: 'homeCtrl'
+            })
+            .when('/contact', {
+                templateUrl: 'homework/Task/contact.html'
+            })
+            .when('/contact/:name/:age/:email/:employed', {
+                templateUrl: 'homework/Task/contact.html',
+                controller: 'contactCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            })
+            $locationProvider.html5Mode(true);
+        })
+        .controller("bodyCtrl", function ($scope, $location) {
+
+            $scope.$on("$locationChangeSuccess", function (event, newUrl) {
+                $scope.url = newUrl;
+            });
+
+            $scope.setUrl = function (url) {
+                switch (url) {
+                    case "home":
+                        $location.url("/home");
+                        break;
+                    case "contact":
+                        $location.url("/contact");
+                        break;
+                }
+            }
+        })
+        .controller('homeCtrl', function ($scope,$location) {
+            $scope.people = [{ name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false },
+            { name: 'Masha', age: 25, email: 'm@m', employed: true },
+            { name: 'Petya', age: 27, email: 'petya@stuff', employed: true },
+            { name: 'John', age: 36, email: 'johnDoe@mail', employed: true },
+            { name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false }];
+            $scope.setUrl = function (url) {
+                $location.url(url);
+            }
+        })
+        .controller('contactCtrl', function ($scope, $routeParams) {
+            $scope.data = {};
+            $scope.data.name = $routeParams.name;
+            $scope.data.age = $routeParams.age;
+            $scope.data.email = $routeParams.email;
+            if ($routeParams.employed === 'true')
+                $scope.data.employed = true;
+            else 
+                $scope.data.employed = false;
+        });
+        
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <button class="btn btn-primary" ng-click="setUrl('home')">home</button>
+    <button class="btn btn-primary" ng-click="setUrl('contact')">contact</button>
+    <div ng-view></div>
+</body>
+</html>

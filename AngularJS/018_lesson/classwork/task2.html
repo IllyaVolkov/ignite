@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Добавьте в код предыдущей задачи еще одну директиву, которая будет выводить значение переменной счетчика в консоль. 
+        Организуйте код так, чтобы обе директивы использовали один и тот же контроллер. Используйте свойство require. -->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script type="text/ng-template" id="btncounter">
+        <button ng-click="startCount()">Start counting!</button>
+        <h2>{{counter}}</h2>
+    </script>
+    <script>
+        angular.module("task2", [])
+        .controller("buttonCtrl", function ($scope, $interval) {
+            $scope.counter = 0;
+            var timer;
+            $scope.startCount = function () {
+                if (timer) $interval.cancel(timer);
+                timer = $interval(function () { $scope.counter++; }, 1000);
+            }
+        })
+        .directive('buttonCount', function () {
+            return {
+                restrict: 'E',
+                template: function () {
+                    return angular.element(document.querySelector("#btncounter")).html();
+                },
+                controller: 'buttonCtrl'
+            }
+        })
+        .directive('logCount', function () {
+            return {
+                restrict: 'A',
+                require: 'buttonCount',
+                controller: 'buttonCtrl',
+                link: function (scope) {
+                    scope.$watch('counter', function (value) {
+                        console.log(value);
+                    });
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <button-count log-count></button-count>
+</body>
+</html>

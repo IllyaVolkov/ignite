@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <title>task 2</title>
+    <!--Разработайте сервис, которой можно будет использовать для кэширования данных. 
+        В кэш можно поместить запись и установить время устаревания этой записи. Продемонстрируйте работу сервиса.-->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module('task2', [])
+        .service('cache', function ($timeout) {
+            this.records = 0;
+            this.cache = {};
+            this.add = function (data, timeout) {
+                this.records++;
+                var obj = this.cache;
+                var key = "key" + this.records;
+                obj[key] = data;
+                $timeout(function () { delete obj[key]; }, timeout);
+            }
+            this.get = function () {
+                return this.cache;
+            }
+        })
+        .controller('bodyCtrl', function ($scope, cache) {
+            $scope.data = '';
+            $scope.addData = function () {
+                cache.add($scope.data, +$scope.timeout);
+            }
+            $scope.showData = function () {
+                $scope.output = '';
+                var tmp = cache.get();
+                for (item in tmp) {
+                    $scope.output += tmp[item] + '\n';
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    Data:<input type="text" ng-model="data" /><br/>
+    Timeout(ms):<input type="text" ng-model="timeout" /><br />
+    <input type="button" value="Add data!" ng-click="addData()" />
+    <input type="button" value="Show cache!" ng-click="showData()" />
+    <h3>{{output}}</h3>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте пользовательскую директиву, которой можно передать массив объектов, а результатом её работы будет сгенерированная таблица. 
+Столбцы таблицы, будут соответствовать свойствам объекта. Используйте подход с link function и генерацию элементов с помощью jqLite.-->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task1", []).controller("bodyCtrl", function ($scope) {
+            $scope.array = [
+                { name: "elem 1", value: "val 1" },
+                { name: "elem 2", value: "val 2" },
+                { name: "elem 3", value: "val 3" },
+                { name: "elem 4", value: "val 4" },
+                { name: "elem 5", value: "val 5" },
+                { name: "elem 6", value: "val 6" }
+            ];
+        })
+        .directive('itemList', function () {
+            return {
+                restrict: 'A',
+                link: function (scope, elem, attributes) {
+                    var data = scope[attributes['itemList']];
+                    var table = angular.element('<table class="table table-striped">');
+                    var tbody = angular.element('<tbody>');
+                    for (item in data) {
+                        var row = angular.element('<tr>');
+                        for (key in data[item]) {
+                            row.append(angular.element('<td>').text(data[item][key]));
+                        }
+                        tbody.append(row);
+                    }
+                    table.append(tbody);
+                    elem.append(table);
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <div item-list="array"></div>
+</body>
+</html>

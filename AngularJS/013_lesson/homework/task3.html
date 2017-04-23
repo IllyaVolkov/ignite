@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Создайте форму для регистрации нового пользователя. Форма должна содержать поля: 
+    ФИО, email, телефон, пароль, подтверждение пароля. Реализуйте real-time валидацию пользовательского ввода. -->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        angular.module("task3", []).controller("bodyCtrl", function ($scope) {
+            $scope.nameRegex = /^.{3,20}$/;
+            $scope.emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+            $scope.phoneRegex = /^[0-9]+$/;
+            $scope.passwordRegex = /^.{6,20}$/;
+            $scope.submit = function (valid) {
+                if (valid) {
+                    if ($scope.newUser.password != $scope.newUser.confirm) {
+                        alert('Passwords are different!');
+                    } else {
+                        alert('Success!!!');
+                    }
+                } else {
+                    alert('Something went wrong!');
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <form name="registrationForm" ng-submit="submit(registrationForm.$valid)" novalidate>
+        ФИО: <input type="text" name="name" ng-model="newUser.name" required ng-pattern="nameRegex"/><br />
+        <p ng-show="registrationForm.name.$invalid && registrationForm.name.$dirty">Ошибка ввода!</p>
+
+        email: <input type="text" name="email" ng-model="newUser.email"  required ng-pattern="emailRegex"/><br />
+        <p ng-show="registrationForm.email.$invalid && registrationForm.email.$dirty">Ошибка ввода!</p>
+
+        телефон: <input type="text" name="phone" ng-model="newUser.phone"  required ng-pattern="phoneRegex"/><br />
+        <p ng-show="registrationForm.phone.$invalid && registrationForm.phone.$dirty">Ошибка ввода!</p>
+
+        пароль: <input type="password" name="password" ng-model="newUser.password"  required ng-pattern="passwordRegex"/><br />
+        <p ng-show="registrationForm.password.$invalid && registrationForm.password.$dirty">Ошибка ввода!</p>
+
+        подтверждение пароля: <input type="password" name="confirm" ng-model="newUser.confirm" required ng-pattern="passwordRegex"/><br />
+        <p ng-show="registrationForm.confirm.$invalid && registrationForm.confirm.$dirty">Ошибка ввода!</p>
+
+        <input type="submit" ng-disabled="registrationForm.$invalid" value="Send!"/>
+    </form>
+</body>
+</html>

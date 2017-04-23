@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте пользовательскую директиву, которой можно передать массив, а результатом её работы будет сгенерированный список.-->
+    <title>task 1</title>
+	<meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task1", []).controller("bodyCtrl", function ($scope) {
+            $scope.array = [
+                "elem 1",
+                "elem 2",
+                "elem 3",
+                "elem 4",
+                "elem 5",
+                "elem 6",
+                "elem 7",
+                "elem 8"
+            ];
+        })
+        .directive('itemList', function () {
+            return function (scope, element) {
+                var data = scope.array;
+                if (angular.isDefined(data)) {
+                    var list = angular.element('<ul>');
+                    element.append(list);
+                    for (var i = 0; i < data.length; i++) {
+                        list.append(angular.element('<li>').text(data[i]));
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <div item-list="array"></div>
+</body>
+</html>

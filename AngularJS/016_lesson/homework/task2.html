@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <title>task 2</title>
+    <!--
+        Добавьте в шаблон страницы home список со свойством name из следующего массива: 
+        ``` 
+           var people = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
+            {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
+            {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
+            {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+            {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}]
+        ```
+        Добавьте на страницу поддержку htm5Mode. 
+    -->
+    <base href="/" />
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script src="../Libraries/angular_route.js"></script>
+    <script>
+        angular.module('task2', ['ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/home', {
+                templateUrl: 'homework/Task/home.html',
+                controller: 'homeCtrl'
+            })
+            .when('/contact', {
+                templateUrl: 'homework/Task/contact.html'
+            })
+            .otherwise({
+                redirectTo: '/'
+            })
+            $locationProvider.html5Mode(true);
+        })
+        .controller("bodyCtrl", function ($scope, $location) {
+
+            $scope.$on("$locationChangeSuccess", function (event, newUrl) {
+                $scope.url = newUrl;
+            });
+
+            $scope.setUrl = function (url) {
+                switch (url) {
+                    case "home":
+                        $location.url("/home");
+                        break;
+                    case "contact":
+                        $location.url("/contact");
+                        break;
+                }
+            }
+        })
+        .controller('homeCtrl', function ($scope) {
+            $scope.people = [{ name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false },
+            { name: 'Masha', age: 25, email: 'm@m', employed: true },
+            { name: 'Petya', age: 27, email: 'petya@stuff', employed: true },
+            { name: 'John', age: 36, email: 'johnDoe@mail', employed: true },
+            { name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false }];
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <button class="btn btn-primary" ng-click="setUrl('home')">home</button>
+    <button class="btn btn-primary" ng-click="setUrl('contact')">contact</button>
+    <div ng-view></div>
+</body>
+</html>

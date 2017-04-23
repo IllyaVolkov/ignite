@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Модифицируйте код предыдущей задачи таким образом, чтобы содержимое поля ввода выводилось на страницу сразу (без нажатия на кнопку)-->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task3", []).controller("bodyController", function ($scope) {
+            $scope.clickEvent = function () {
+                $scope.message = $scope.input;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyController">
+    <input type="text" ng-model="input" ng-change="clickEvent()"/>
+    <input type="button" ng-click="clickEvent()" value="button" />
+    <p>{{message}}</p>
+</body>
+</html>

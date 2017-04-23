@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Есть массив items: 
+        ```
+        [
+                        { name: "Table", price: 44.10 },
+                        { name: "Chair", price: 21.20 },
+                        { name: "Pillow", price: 12.20 },
+                        { name: "Picture", price: 112.70 },
+                        { name: "Lamp", price: 28.31 }
+                    ]; 
+        ```
+        Создайте две директивы. Первая создает панель меню с элементами, взятыми из свойства name массива items. Вторая директива
+        при клике по элементу на панели меню, показывает пользователю соответсствующий контент, взятый из свойства price массива items. 
+        Директивы используют общий контроллер. -->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script type="text/ng-template" id="menu">
+        <ul><li ng-repeat="item in array" show-price>{{item.name}}</li></ul>
+    </script>
+    <script>
+        angular.module("task1", [])
+        .controller("menuCtrl", function ($scope) {
+            $scope.array = [
+                        { name: "Table", price: 44.10 },
+                        { name: "Chair", price: 21.20 },
+                        { name: "Pillow", price: 12.20 },
+                        { name: "Picture", price: 112.70 },
+                        { name: "Lamp", price: 28.31 }
+            ];
+        })
+        .directive("menuDirective", function () {
+            return {
+                restrict: 'E',
+                replace: true,
+                template: function () {
+                    return angular.element(document.querySelector("#menu")).html();
+                },
+                controller: 'menuCtrl'
+            }
+        })
+        .directive("showPrice", function ($compile) {
+            return {
+                restrict: 'A',
+                link: function(scope, element, attrs) {
+                    var content = angular.element('</br><span ng-show="showContent">{{item.price}}</span>');
+                    element.on('click', function() {
+                        scope.$apply('showContent = !showContent');
+                    });
+                    element.append(content);
+                    $compile(content)(scope);
+                },
+                controller: 'menuCtrl'
+            }
+        });
+    </script>
+</head>
+<body>
+    <menu-directive></menu-directive>
+</body>
+</html>

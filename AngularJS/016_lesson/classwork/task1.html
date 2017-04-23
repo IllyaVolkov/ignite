@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+    <head>
+        <title>task 1</title>
+        <!--Создайте страницу с двумя ссылками view1 и view2. Реализуйте переключение view между view1 и view2 при клике по ссылкам. 
+            Файлы для задачи находятся в папке Task-->
+        <meta charset="utf-8" />
+        <link href="../Libraries/bootstrap.css" rel="stylesheet"/>
+        <script src="../Libraries/angular.js"></script>
+        <script src="../Libraries/angular_route.js"></script>
+        <script>
+            angular.module('task1', ['ngRoute'])
+            .config(function ($routeProvider) {
+                $routeProvider
+                .when('/view1', {
+                    templateUrl: 'Task/view1.html'
+                })
+                .when('/view2', {
+                    templateUrl: 'Task/view2.html'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <a href="#/view1">view 1</a>
+        <a href="#/view2">view 2</a>
+        <ng-view></ng-view>
+    </body>
+</html>

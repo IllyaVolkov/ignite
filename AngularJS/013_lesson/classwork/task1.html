@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте страницу с элементом div и кнопкой. Реализуйте следующее: При нажатии на кнопку элементу div присваиваются 2 CSS-класса-->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        angular.module("task1", []).controller("bodyCtrl", function ($scope) {
+            $scope.classes = {
+                default: true,
+                round: false,
+                border: false
+            }
+            $scope.addClasses = function () {
+                $scope.classes.border = true;
+                $scope.classes.round = true;
+            }
+            $scope.removeClasses = function () {
+                $scope.classes.border = false;
+                $scope.classes.round = false;
+            }
+        });
+    </script>
+    <style>
+        .border {
+            border: 2px solid red;
+        }
+        .round {
+            border-radius: 50%;
+        }
+        .default {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body ng-controller="bodyCtrl">
+    <div ng-class="classes"></div>
+    <input type="button" ng-mousedown="addClasses()" ng-mouseup="removeClasses()" value="Click me!"/>
+</body>
+</html>

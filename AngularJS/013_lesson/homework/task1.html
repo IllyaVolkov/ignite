@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте три разных CSS класса, которые по-разному будут оформлять блок текста на странице. 
+        Реализуйте возможность выбирать стиль для оформления страницы с помощью кнопок или checkbox-->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        angular.module("task1", []).controller("bodyCtrl", function ($scope) {
+            $scope.classes = {
+                default: true,
+                round: false,
+                border: false,
+                text: false
+            }
+            $scope.addClasses = function () {
+                $scope.classes.border = true;
+                $scope.classes.round = true;
+            }
+            $scope.removeClasses = function () {
+                $scope.classes.border = false;
+                $scope.classes.round = false;
+            }
+        });
+    </script>
+    <style>
+        .border {
+            border: 2px solid red;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+        .text {
+            color: red;
+            text-align: center;
+            line-height: 200px;
+            vertical-align: middle;
+        }
+        .default {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body ng-controller="bodyCtrl">
+    <div ng-class="classes">Some text</div>
+    Border: <input type="checkbox" ng-model="classes.border" />
+    Round: <input type="checkbox" ng-model="classes.round" />
+    Text: <input type="checkbox" ng-model="classes.text" />
+</body>
+</html>

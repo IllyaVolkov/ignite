@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Создайте страницу с полем ввода и кнопкой. При нажатии на кнопку содержимое поля ввода должно отображаться на странице. -->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task2", []).controller("bodyController", function ($scope) {
+            $scope.clickEvent = function () {
+                $scope.message = $scope.input;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyController">
+    <input type="text" ng-model="input" />
+    <input type="button" ng-click="clickEvent()" value="button"/>
+    <p>{{message}}</p>
+</body>
+</html>

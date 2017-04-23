@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Создайте директиву для генерации меню. 
+    В качестве источника данных директива должна использовать массив объектов, одно из свойств объекта должено содержать текст элемента меню, 
+    второе свойство должно использоватся для определения адреса перехода при клике по элементу меню. 
+    -->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script type="text/ng-template" id="myTemplate">
+        <a ng-repeat="item in data" href="{{item.value}}"><p>{{item.name}}</p></a>
+</script>
+    <script>
+        angular.module("task3", []).controller("bodyController", function ($scope) {
+            $scope.array = [
+                { name: "task 1", value: "task1.html" },
+                { name: "task 2", value: "task2.html" },
+                { name: "task 1 classwork", value: "../classwork/task1.html" }
+            ];
+        })
+        .directive('menu', function () {
+            return {
+                restrict: 'A',
+                replace: true,
+                template: function () {
+                    return angular.element(document.querySelector("#myTemplate")).html();
+                },
+                scope: {
+                    data: "=menu"
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyController">
+    <div menu="array"></div>
+</body>
+</html>

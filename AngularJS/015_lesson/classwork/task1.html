@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+    <head>
+        <title>task 1</title>
+        <!--Создайте страницу с произвольным количеством блоков текста с заголовками. Создайте список заголовков вверху страницы. 
+            Используя сервис $anchorScroll, реализуйте навигацию на странице.При нажатии на заголовок в списке вверху страницы, 
+            страница должна быть автоматически прокручена до блока текста с соответствующим заголовком. -->
+        <meta charset="utf-8" />
+        <link href="../Libraries/bootstrap.css" rel="stylesheet"/>
+        <script src="../Libraries/angular.js"></script>
+        <script>
+            angular.module('task1', [])
+            .controller('bodyCtrl', function ($scope, $anchorScroll, $location) {
+                $scope.scroll = function (id) {
+                    $location.hash(id);
+                }
+            });
+        </script>
+        <style>
+            li {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <ul>
+        <li ng-click="scroll('h1')">Header 1</li>
+        <li ng-click="scroll('h2')">Header 2</li>
+        <li ng-click="scroll('h3')">Header 3</li>
+        <li ng-click="scroll('h4')">Header 4</li>
+        <li ng-click="scroll('h5')">Header 5</li>
+        <li ng-click="scroll('h6')">Header 6</li>
+    </ul>
+    <body ng-controller="bodyCtrl">
+        <div class="textBlock">
+            <h2 id="h1">Header 1</h2>
+            <p>Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+        <div class="textBlock">
+            <h2 id="h2">Header 2</h2>
+            <p>
+                Subjects to ecstatic children he. Could ye leave up as built match. </br>
+                Dejection agreeable attention set suspected led offending. </br>
+                Admitting an performed supposing by. </br>
+                Garden agreed matter are should formed temper had. </br>
+                Full held gay now roof whom such next was. </br>
+                Ham pretty our people moment put excuse narrow. </br>
+                Spite mirth money six above get going great own. </br>
+                Started now shortly had for assured hearing expense. </br>
+                Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+        <div class="textBlock">
+            <h2 id="h3">Header 3</h2>
+            <p>
+                Subjects to ecstatic children he. Could ye leave up as built match. </br>
+                Dejection agreeable attention set suspected led offending. </br>
+                Admitting an performed supposing by. </br>
+                Garden agreed matter are should formed temper had. </br>
+                Full held gay now roof whom such next was. </br>
+                Ham pretty our people moment put excuse narrow. </br>
+                Spite mirth money six above get going great own. </br>
+                Started now shortly had for assured hearing expense. </br>
+                Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+        <div class="textBlock">
+            <h2 id="h4">Header 4</h2>
+            <p>
+                Subjects to ecstatic children he. Could ye leave up as built match. </br>
+                Dejection agreeable attention set suspected led offending. </br>
+                Admitting an performed supposing by. </br>
+                Garden agreed matter are should formed temper had. </br>
+                Full held gay now roof whom such next was. </br>
+                Ham pretty our people moment put excuse narrow. </br>
+                Spite mirth money six above get going great own. </br>
+                Started now shortly had for assured hearing expense. </br>
+                Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+        <div class="textBlock">
+            <h2 id="h5">Header 5</h2>
+            <p>
+                Subjects to ecstatic children he. Could ye leave up as built match. </br>
+                Dejection agreeable attention set suspected led offending. </br>
+                Admitting an performed supposing by. </br>
+                Garden agreed matter are should formed temper had. </br>
+                Full held gay now roof whom such next was. </br>
+                Ham pretty our people moment put excuse narrow. </br>
+                Spite mirth money six above get going great own. </br>
+                Started now shortly had for assured hearing expense. </br>
+                Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+        <div class="textBlock">
+            <h2 id="h6">Header 6</h2>
+            <p>
+                Subjects to ecstatic children he. Could ye leave up as built match. </br>
+                Dejection agreeable attention set suspected led offending. </br>
+                Admitting an performed supposing by. </br>
+                Garden agreed matter are should formed temper had. </br>
+                Full held gay now roof whom such next was. </br>
+                Ham pretty our people moment put excuse narrow. </br>
+                Spite mirth money six above get going great own. </br>
+                Started now shortly had for assured hearing expense. </br>
+                Led juvenile his laughing speedily put pleasant relation offering.</br>
+            </p>
+        </div>
+    </body>
+</html>

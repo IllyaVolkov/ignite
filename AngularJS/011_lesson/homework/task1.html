@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ToDo List">
+<head>
+    <!--Откройте файл Task/Task.html.Вам необходимо разработать приложение “To do List”. Приложение должно отображать пользователю таблицу с задачами
+    и предоставлять возможность добавлять новые задачи. Приложение должно быть построено по шаблону, который находится в папке Task в файле template.png-->
+    <title>ToDo List (Task1)</title>
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+
+        // Добавьте AngularJS контроллер
+        var model = [];
+
+        angular.module("ToDo List", []).controller("bodyCtrl", function ($scope) {
+            $scope.data = model;
+
+            $scope.click = function () {
+                var newRow = {
+                    name: $scope.name || 'empty',
+                    description: $scope.description || 'empty',
+                    date: $scope.date || 'empty',
+                    completed: $scope.completed || false
+                }
+                model.push(newRow);
+            }
+        });
+
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <div class="container">
+        <h3>ToDo List</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="row in data">
+                <td>{{row.name}}</td>
+                <td>{{row.description}}</td>
+                <td>{{row.date}}</td>
+                <td>{{row.completed}}</td>
+            </tr>
+        </table>
+        <div class="input-group">
+            <b>Name</b><br />
+            <input class="form-control" ng-model="name"/>
+            <b>Due Date</b><br />
+            <input class="form-control" ng-model="date"/>
+            <b>Description</b><br />
+            <textarea class="form-control" ng-model="description"></textarea>
+            <b>Completed</b><br />
+            <input type="checkbox" ng-model="completed" /><br />
+            <button class="btn btn-default" ng-click="click()">Add</button>
+        </div>
+    </div>
+</body>
+</html>

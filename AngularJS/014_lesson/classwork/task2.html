@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <title>task 2</title>
+    <!--Создайте сервис из предыдущей задачи, используя метод провайдера.-->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module('task2', [])
+        .provider('myService', function () {
+            var startValue = 0;
+            return {
+                setStartVal: function (value) {
+                    startValue = value;
+                },
+                $get: function () {
+                    var counter = startValue;   
+                    return function () {
+                        console.log(counter++);
+                    }
+                }
+            };
+        })
+        .config(function (myServiceProvider) {
+            myServiceProvider.setStartVal(1);
+        })
+        .controller('bodyCtrl', function ($scope, myService) {
+            $scope.countClicks = function () {
+                myService();
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input type="button" value="count++" ng-click="countClicks()" />
+</body>
+</html>

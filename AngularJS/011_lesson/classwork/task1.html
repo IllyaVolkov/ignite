@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Создайте приложение, которое выводит на экран надпись 'Hello World!'.-->
+    <title>task 1</title>
+	<meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <script>
+        angular.module("task1", []).controller("bodyCtrl", function ($scope) {
+            $scope.message = 'Hello World!';
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <p>{{message}}</p>
+</body>
+</html>

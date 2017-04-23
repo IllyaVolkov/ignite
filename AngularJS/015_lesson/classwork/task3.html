@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <title>task 3</title>
+    <!--Разработайте сервис, которой можно будет использовать для записи данных в cookie. Продемонстрируйте работу сервиса.-->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script src="ngCookies.js"></script>
+    <script>
+        angular.module('task3', ['ngCookies'])
+        .service('cookieService', ['$cookieStore', function ($cookieStore) {
+            this.counter = 0;
+            this.add = function (value) {
+                this.counter++;
+                $cookieStore.put('key' + this.counter, value);
+            }
+            this.get = function () {
+                var output = [];
+                for (var i = 1; i <= this.counter; i++) {
+                    output.push({ text: $cookieStore.get('key' + i) });
+                }
+                return output;
+            }
+        }])
+        .controller('bodyCtrl', function ($scope, cookieService) {
+            $scope.value = 'default';
+            $scope.cookies = [];
+            $scope.addCookie = function () {
+                cookieService.add($scope.value);
+            }
+            $scope.outputCookies = function () {
+                $scope.cookies = cookieService.get();
+            }
+        });
+        </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input type="text" ng-model="value" />
+    <input type="button" ng-click="addCookie()" value="Add cookie!"/>
+    <input type="button" ng-click="outputCookies()" value="Get cookies!" />
+    <ul>
+        <li ng-repeat="cookie in cookies">{{cookie.text}}</li>
+    </ul>
+</body>
+</html>
