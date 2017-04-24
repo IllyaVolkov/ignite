@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="task2">
+<head>
+    <!--Используя сервис $interpolate выведите имя в шаблоне жирным начертанием используя тег strong:
+        ```
+        "Hello my name is {{name}}"
+        var data = { name: "<strong>Ivan</strong>" }
+        ```-->
+    <title>task 2</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        var module = angular.module('task2', [])
+        .controller('bodyCtrl', function ($scope, $interpolate, $document) {
+            var data = { name: "<strong>Ivan</strong>" };
+            var template = "Hello my name is {{name}}";
+            $document.find('body').eq(0).html($interpolate(template)(data));
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+</body>
+</html>

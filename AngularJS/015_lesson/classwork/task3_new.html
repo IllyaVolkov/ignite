@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <!--Используя сервис $compile выведите имя в шаблоне жирным начертанием используя тег <strong>:
+
+        ```
+        "Hello my name is {{name}}"
+        var data = { name: "<strong>Ivan</strong>" }
+        ```-->
+    <title>task 3</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        var module = angular.module('task3', [])
+        .controller('bodyCtrl', function ($scope, $compile, $document) {
+            var data = { name: "<strong>Ivan</strong>" };
+            var template = "Hello my name is {{name}}";
+            for (elem in data) {
+                $scope[elem] = data[elem];
+            }
+            var elem = $compile('<div>' + template + '</div>')($scope);
+            $document.find('body').eq(0).append(elem);    
+        });
+
+        window.onload = function () {
+            document.getElementsByTagName('div')[0].innerHTML = document.getElementsByTagName('div')[0].innerHTML.split('&lt;').join('<').split('&gt;').join('>');
+        }
+    </script>
+</head>
+<body ng-controller="bodyCtrl" id="test">
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="task1">
+<head>
+    <!--Используя сервис $parse, реализуйте калькулятор без использования деректив. -->
+    <title>task 1</title>
+    <meta charset="utf-8" />
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script>
+        var module = angular.module('task1', [])
+        .controller('bodyCtrl', function ($scope, $parse) {
+            $scope.count = function () {
+                alert($parse($scope.val)());
+            }
+        });
+    </script>
+</head>
+<body ng-controller="bodyCtrl">
+    <input ng-model="val" type="text" placeholder="input your expression"/>
+    <input type="button" ng-click="count()" value="count" />
+</body>
+</html>

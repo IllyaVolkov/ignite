@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html ng-app="task3">
+<head>
+    <title>task 3</title>
+    <!--Используя любой сторонний сервис, измените усовершенствуйте решение задачи 2, 
+        так что бы прокрутка выполнялась плавно.
+         -->
+    <meta charset="utf-8" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="../Libraries/angular.js"></script>
+    <script src="ngSmoothScroll.js"></script>
+    <script>
+        angular.module('task3', ["smoothScroll"])
+            .controller('bodyCtrl', ['smoothScroll', function () { }]);
+    </script>
+    <style>
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-controller="bodyCtrl">
+    <ul>
+        <li scroll-to="h1">Header 1</li>
+        <li scroll-to="h2">Header 2</li>
+        <li scroll-to="h3">Header 3</li>
+        <li scroll-to="h4">Header 4</li>
+        <li scroll-to="h5">Header 5</li>
+        <li scroll-to="h6">Header 6</li>
+    </ul>
+    <div class="textBlock">
+        <h2 id="h1">Header 1</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+    <div class="textBlock">
+        <h2 id="h2">Header 2</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+    <div class="textBlock">
+        <h2 id="h3">Header 3</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+    <div class="textBlock">
+        <h2 id="h4">Header 4</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+    <div class="textBlock">
+        <h2 id="h5">Header 5</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+    <div class="textBlock">
+        <h2 id="h6">Header 6</h2>
+        <p>
+            Subjects to ecstatic children he. Could ye leave up as built match. </br>
+            Dejection agreeable attention set suspected led offending. </br>
+            Admitting an performed supposing by. </br>
+            Garden agreed matter are should formed temper had. </br>
+            Full held gay now roof whom such next was. </br>
+            Ham pretty our people moment put excuse narrow. </br>
+            Spite mirth money six above get going great own. </br>
+            Started now shortly had for assured hearing expense. </br>
+            Led juvenile his laughing speedily put pleasant relation offering.</br>
+        </p>
+    </div>
+</body>
+</html>
