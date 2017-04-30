@@ -1,0 +1,48 @@
+﻿#news {
+    background: #fff;
+    width: 100%;
+    padding: 40px 0 150px 0;
+}
+
+#news .container > p {
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+#news .date {
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+#news .date h3 {
+    font-family: 'Raleway Regular';
+    color: #00e1ff;
+    font-size: 67px;
+}
+
+#news .date p {
+    padding: 10px 0;
+    font-family: 'Raleway Regular';
+}
+
+#news .content {
+    padding: 45px 0 70px 0;
+    margin-left: 40px;
+}
+
+#news .content .separator {
+    width: 100%;
+    background: #edf2f6;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+#news a {
+    font-size: 13px;
+    font-family: 'Raleway Regular';
+    color: #00e1ff;
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+}

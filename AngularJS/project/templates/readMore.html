@@ -1,0 +1,9 @@
+﻿<div class="date col-lg-1 col-lg-offset-2 col-md-2 col-md-offset-1 col-sm-2 col-xs-3">
+    <h3>{{getDate(news[id - 1].date) | date: "dd"}}</h3>
+    <p>{{getDate(news[id - 1].date) | date: "MMMM"}}</p>
+</div>
+<div class="content col-lg-7 col-md-8 col-sm-9 col-xs-7">
+    <p>{{news[id - 1].text}}</p>
+    <a href="#/">Return</a>
+    <div class="separator"></div>
+</div>

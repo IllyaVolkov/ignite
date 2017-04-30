@@ -1,0 +1,65 @@
+﻿#about {
+    background: #fff;
+    width: 100%;
+    padding: 120px 0;
+    text-align: center;
+}
+
+#about p{
+    color:#444444;
+}
+
+#about .col-lg-3 {
+    padding-top: 90px;
+}
+
+#about .photo {
+    background-color: #252726;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+
+#about .label {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(19,19,22,0.5);
+    text-align: center;
+    padding: 0;
+}
+
+#about .label h3 {
+    color: #00e1ff;
+    padding-top: 5px;
+}
+
+#about .label p {
+    color: #fff;
+    font-family: 'Raleway Medium';
+    padding: 10px 0;
+}
+
+#about .col-lg-3 > p {
+    padding: 30px 25px;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+#about .link {
+    width: 25%;
+    height: 56px;
+    float: left;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+#about .link div {
+    line-height: 56px;
+    vertical-align: middle;
+}

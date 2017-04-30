@@ -1,0 +1,76 @@
+﻿header {
+    height: 100px;
+    z-index: 1000;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+}
+
+header .row div {
+    text-align:center;
+    padding: 0;
+}
+
+header img {
+    margin: 34px auto;
+    display:inline;
+}
+
+.scrollBlock {
+    height: 100px;
+    line-height: 100px;
+    vertical-align:middle;
+    cursor: pointer;
+    font-family: 'Raleway Light', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.selected {
+    color: #00e1ff;
+    border-bottom: 2px solid #00e1ff;
+}
+
+
+header button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 30px 0;
+}
+
+header .dropdown .scrollBlock {
+    height: 50px;
+    line-height: 50px;
+}
+
+header button img{
+    width: 40px;
+    margin: 0;
+    display: inline;
+}
+
+#home {
+    height: 800px;
+    width: 100%;
+    background-image: url(../img/header/background.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color: #252726;
+    padding-top: 384px;
+    text-align: center;
+}
+
+#home button {
+  width: 170px;
+  height: 50px;
+  background:none;
+  border: 1px solid #fff;
+  font-size: 15px;
+  color: #fff;
+  outline: none;
+  font-family: 'Raleway Regular';
+  text-transform: uppercase;
+  margin: 40px 0;
+  display: inline;
+}

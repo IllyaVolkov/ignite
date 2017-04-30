@@ -1,0 +1,32 @@
+﻿#stats {
+    background: #131316;
+    width: 100%;
+}
+
+.statImg {
+    width: 100%;
+    line-height: 140px;
+    text-align: center;  
+}
+
+.statImg img{
+    margin: 0 auto;
+    display: inline;
+    vertical-align:bottom;
+}
+
+#stats .number{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Raleway Light';
+    padding-top: 40px; 
+}
+
+#stats p{
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Raleway Medium';
+    padding: 20px 0 80px 0;
+}

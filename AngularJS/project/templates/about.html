@@ -1,0 +1,25 @@
+﻿<div id="about" ng-controller="aboutCtrl">
+    <div class="container">
+        <h2>We are the one</h2>
+        <div class="separator"></div>
+        <p class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. 
+            Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
+        </p>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2" ng-repeat="member in team">
+            <div class="photo" style="background-image: url({{member.image}})">
+                <div class="label">
+                    <h3>{{member.name}}</h3>
+                    <p>{{member.position}}</p>
+                </div>
+            </div>
+            <p>{{member.text}}</p>
+            <div class="link" ng-repeat="link in member.links" ng-init="flag = false" ng-mouseenter="flag = true" ng-mouseleave="flag = false" ng-switch on="flag">
+                <a href="{{link.href}}">
+                    <div ng-switch-when="false" style="background-color: {{link.offColor}}"><img src="{{link.off}}" /></div>
+                    <div ng-switch-when="true" style="background-color: {{link.onColor}}"><img src="{{link.on}}" /></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

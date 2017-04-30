@@ -1,0 +1,50 @@
+﻿footer {
+    background: #131316;
+    height: 112px;
+    line-height: 112px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+    font-family: 'Raleway Medium';
+    font-size: 15px;
+}
+
+footer img {
+    margin: 20px;
+    cursor: pointer;
+}
+
+footer span {
+    color: #00e1ff;
+}
+
+#map {
+    background: #252726;
+    height: 400px;
+    padding-top: 127px;
+}
+
+#address {
+    background: #07bcd4;
+    padding-top: 20px;
+}
+
+#address p {
+    text-align: center;
+    font-family: 'Raleway Medium';
+    font-size: 15px;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+#triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 14px 0 14px;
+    border-color: #07bcd4 transparent transparent transparent;
+    margin: 0 auto;
+}

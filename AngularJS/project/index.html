@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="KET">
+<head>
+    <title>KET</title>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Styles-->
+    <link href="css/bodyStyle.css" rel="stylesheet">
+    <link href="css/headerStyle.css" rel="stylesheet">
+    <link href="css/serviceStyle.css" rel="stylesheet">
+    <link href="css/portfolioStyle.css" rel="stylesheet">
+    <link href="css/statsStyle.css" rel="stylesheet">
+    <link href="css/aboutUs.css" rel="stylesheet">
+    <link href="css/newsStyle.css" rel="stylesheet">
+    <link href="css/contactStyle.css" rel="stylesheet">
+    <link href="css/footerStyle.css" rel="stylesheet">
+
+    <!--Bootstrap tools-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!--Angular tools-->
+    <script src="js/angular.js"></script>
+    <script src="js/ngSmoothScroll.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/angular-counter.js"></script>
+    <script src="js/angular_route.js"></script>
+
+    <!--Scripts-->
+    <script src="js/coreScript.js"></script>
+
+</head>
+<body>
+    <header ng-controller="headerCtrl" ng-cloak>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-sm-offset-0 col-xs-4 col-xs-offset-1">
+                    <img src="img/header/Logo.png" />
+                </div>
+                <div class="col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div ng-repeat="item in menu" class="col-lg-1 col-md-1 hidden-sm hidden-xs" scroll-to="{{item.dest}}">
+                    <div class="scrollBlock"  ng-click="select($event)">{{item.name}}</div>
+                </div>
+                <div class="dropdown btn-group hidden-lg hidden-md col-sm-offset-7 col-sm-2 col-xs-2 col-xs-offset-4">
+                    <button data-toggle="dropdown">
+                        <img src="img/header/menu.png" />
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li ng-repeat="item in menu" scroll-to="{{item.dest}}">
+                            <div class="scrollBlock" ng-click="select($event)">{{item.name}}</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="home">
+        <div class="container">
+            <h1>we make websites</h1>
+            <button scroll-to="portfolio">start tour</button>
+        </div>
+    </div>
+
+    <div id="services" ng-controller="serviceCtrl">
+        <div class="container">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service" ng-click="select($event, 'web', 'left')">
+                    <img src="img/services/service1.png"  />
+                    <h2>web design</h2>
+                </div>
+                <div class="edge col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="select selectLeft col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service" ng-click="select($event, 'graphic', 'middle')">
+                    <img src="img/services/service2.png" />
+                    <h2>graphic design</h2>
+                </div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="select unselect col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service" ng-click="select($event, 'programming', 'middle')" >
+                    <img src="img/services/service3.png"/>
+                    <h2>programming</h2>
+                </div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="select unselect col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service" ng-click="select($event, 'photography', 'right')" >
+                    <img src="img/services/service4.png"/>
+                    <h2>photography</h2>
+                </div>
+                <div class="middle col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="select unselect col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+                <div class="edge col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+            </div>
+            <div class="separator hidden-lg hidden-md col-sm-12 col-xs-12"></div>
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" ng-switch on="text">
+                <p ng-switch-when="web">
+                    (text 1) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i
+                    rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p ng-switch-when="graphic">
+                    (text 2) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i
+                    rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p ng-switch-when="programming">
+                    (text 3) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i
+                    rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p ng-switch-when="photography">
+                    (text 4) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i
+                    rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="responsive">
+        <div class="container">
+            <div class="col-lg-10 col-lg-offset-1">
+                <button>start tour</button>
+                <button class="selected">for all devices</button>
+            </div>
+            <div class="image col-lg-5 col-lg-offset-1 col-md-6 col-sm-6">
+                <img src="img/services/phones.png" />
+            </div>
+            <div class="info col-lg-6 col-md-6 col-sm-6">
+                <h2>Fully Responsive</h2>
+                <p>
+                   Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, 
+                   volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.
+                   Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. 
+                   Quod congue ea ius, nisl aperiri sit ut.
+                </p>
+                <button scroll-to="about">get now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio" ng-controller="portfolioCtrl">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div class="separator"></div>
+            <p class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
+            </p>
+            <div class="buttons col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <button class="selected" ng-click="select('all', $event)">all</button>
+                <button ng-click="select('web', $event)">web</button>
+                <button ng-click="select('photography', $event)">photography</button>
+                <button ng-click="select('design', $event)">graphic design</button>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="image in images | filter : imageFilter" class="imageWrapper col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-init="flag = false" ng-mouseenter="flag = true" ng-mouseleave="flag = false" ng-switch on="flag" ng-cloak>
+                <div class="imageInfo" ng-switch-when="true">
+                    <div>
+                        <h3>{{image.name}}</h3>
+                        <p>{{image.category}}</p>
+                    </div>
+                </div>
+                <img src="{{image.src}}" />
+            </div>
+        </div>
+    </div>
+
+    <div id="stats" ng-controller="statsCtrl" scroll>
+        <div class="container">
+            <div ng-repeat="stat in stats" class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-cloak>
+                <div class="statImg">
+                    <img src="{{stat.image}}" />
+                </div>
+                <div class="number" counter value="manualStartVar" to="stat.current" duration="3000">{{manualStartVar | number: 0 | numberCustom}}</div>
+                <p>{{stat.name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <about ng-cloak></about>
+
+    <div id="news" ng-controller="newsCtrl">
+        <div class="container">
+            <h2>Check our news</h2>
+            <div class="separator"></div>
+            <p class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
+            </p>
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <div id="contact" ng-controller="contactCtrl">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="separator"></div>
+            <p class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 ">
+                Eum cu tantas legere complectitur, hinc utamur ea eam.
+                Eum patrioque mnesarchum eu, diam erant convenire et vis.
+                Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.
+            </p>
+            <form name="contact">
+                <div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6">
+                    <input type="text" name="name" ng-model="name" placeholder="Your name here" ng-pattern="nameRegexp"/>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6">
+                    <input type="text" name="mail" ng-model="mail" placeholder="Your mail here"  ng-pattern="mailRegexp"/>
+                </div>
+                <div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6"><label></label></div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6"><label></label></div>
+                <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 col-xs-12">
+                    <input type="text" name="message" ng-model="message" placeholder="Your message here" ng-pattern="messageRegexp"/>
+                </div>
+                <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 col-xs-12"><label></label></div>
+                <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 col-xs-12" ng-show="contact.name.$invalid && contact.name.$dirty">
+                    <div class="warning">Name: Only Latin symbols allowed!</div>
+                </div>
+                <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 col-xs-12" ng-show="contact.mail.$invalid && contact.mail.$dirty">
+                    <div class="warning">Mail: Only Latin symbols, '@', '_' and '.' allowed!</div>
+                </div>
+                <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 col-xs-12" ng-show="contact.message.$invalid && contact.message.$dirty">
+                    <div class="warning">Message: At least 20 symbols required!</div>
+                </div>
+                <div class="col-lg-offset-8 col-lg-2 col-md-offset-8 col-md-3 col-sm-offset-8 col-sm-4 col-xs-offset-6 col-xs-6">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="map">
+        <div class="container">
+            <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                <div id="address">
+                    <p>Awesome Address 432</p>
+                    <p>ourmail@sometype.com</p>
+                    <p>+321(0)32 123 343 492</p>
+                </div>
+                <div id="triangle"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">     
+            <p>
+                <img src="img/footer/upArrow.png" scroll-to="home"/>
+                © 2014 - <span>Kat</span> All Right Reserved
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

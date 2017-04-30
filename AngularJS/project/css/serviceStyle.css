@@ -1,0 +1,123 @@
+﻿#services {
+    padding: 48px 0 120px 0;
+}
+
+#services h2 {
+    font-size: 15px;
+    padding: 30px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#services .container > div {
+    padding: 0;
+}
+
+#services .service  {
+    padding: 0;
+    text-align: center;
+    height: 225px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+#services .service img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#services p {
+    padding: 45px 0 0 75px;
+    text-align: left;
+    font-size: 15px;
+}
+
+#services .middle, #services .selectRight, #services .selectCenter, #services .selectLeft, #services .edge, #services .unselect {
+    height: 60px;
+}
+
+#services .unselect {
+    border-top: 2px solid #00e1ff;
+    border-bottom: 2px solid #00e1ff;
+}
+
+#services .middle {
+    border-bottom: 2px solid #00e1ff;
+}
+
+#services .selectRight {
+    border-top: 2px solid #00e1ff;
+    border-left: 2px solid #00e1ff;
+}
+
+#services .selectCenter {
+    border-top: 2px solid #00e1ff;
+    border-left: 2px solid #00e1ff;
+    border-right: 2px solid #00e1ff;
+}
+
+#services .selectLeft {
+    border-top: 2px solid #00e1ff;
+    border-right: 2px solid #00e1ff;
+}
+
+#services .separator {
+    width: 100%;
+}
+
+#responsive {
+    background: #f7f7f7;
+    width: 100%;
+    padding: 50px 0 100px 0;
+}
+
+#responsive button {
+    border: 1px solid #c8cdce;
+    outline: none;
+    background: none;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    font-size: 15px;
+    color: #3f4244;
+    font-family: 'Raleway Medium';
+    text-transform: uppercase;
+}
+
+#responsive .selected {
+    border-color: #00e1ff;
+}
+
+#responsive .image {
+    text-align: center;
+}
+
+#responsive img{
+    margin-top: 85px;
+    display: inline;
+    width: 80%;
+}
+
+#responsive .info button{
+    width: 170px;
+    color: #00e1ff;
+    border-color: #00e1ff;
+}
+
+#responsive p {
+    text-align: left;
+    font-size: 15px;
+    padding: 35px 0;
+}
+
+#responsive h2 {
+    text-align: left;
+    padding-top: 120px;
+}

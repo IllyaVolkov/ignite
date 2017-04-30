@@ -1,0 +1,81 @@
+﻿#portfolio {
+    background: #fff;
+    width: 100%;
+    padding: 120px 0 0 0;
+}
+
+#portfolio .container > p {
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+#portfolio .buttons {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#portfolio button {
+    border: none;
+    outline: none;
+    background: none;
+    color: #3f4244;
+    font-size: 13px;
+    font-family: 'Raleway Regular';
+    line-height: 50px;
+    text-transform: uppercase;
+    padding: 0 25px;
+    display: inline;
+    margin-bottom: 30px;
+}
+
+#portfolio .selected {
+    border: 1px solid #00e1ff;
+}
+
+#portfolio .imageWrapper {
+    padding: 0;
+    float: left;
+}
+
+
+#portfolio .imageWrapper img {
+    padding: 0;
+    width: 100%;
+}
+
+#portfolio .row{
+    margin: 0;
+}
+
+#portfolio .imageInfo{
+    z-index: 100;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,255,255,0.5);
+}
+
+#portfolio .imageInfo > div {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+#portfolio .imageInfo h3{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-family: 'Raleway Bold';
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+#portfolio .imageInfo p {
+    padding-top: 16px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Raleway Bold';
+    font-size: 16px;
+    text-transform: uppercase;
+}
