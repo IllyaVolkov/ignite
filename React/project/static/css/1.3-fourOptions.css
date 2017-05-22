@@ -1,0 +1,39 @@
+﻿#fourOptions .option {
+    height: 367px;
+    padding-top: 45px;
+    text-align: center;
+}
+
+#fourOptions .dark {
+    background: #1c2a33;
+    color: #18cfab;
+    border-top: 7px solid #18cfab;
+}
+
+#fourOptions .light {
+    background: #18cfab;
+    color: #fff;
+    border-top: 7px solid #fff;
+}
+
+#fourOptions .container-fluid {
+    padding: 0;
+}
+
+#fourOptions .content {
+    height: 180px;
+    position: relative;
+}
+
+#fourOptions .content>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#fourOptions p {
+    font-size: 20px;
+    font-family: 'Montserrat Bold';
+    text-transform: uppercase;
+}

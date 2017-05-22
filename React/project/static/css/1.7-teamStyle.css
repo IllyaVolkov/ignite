@@ -1,0 +1,81 @@
+﻿#team {
+	padding: 110px 0;
+}
+
+#team h2{
+	color: #4e4e4e;
+}
+
+#team .separator {
+	margin-bottom: 70px;
+}
+
+#team .col-lg-3 {
+	margin-bottom: 60px;
+}
+
+#team .photo {
+	height: 228px;
+	background-color: #8c9aa3;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:contain;
+	position: relative;
+}
+
+#team .data {
+	background-color: #2e4a5b;
+	padding: 16px 25px;
+	color: #18cfab;
+}
+
+#team .data:hover {
+	color: #2e4a5b;
+	background-color: #18cfab;
+}
+
+#team h3 {
+	color: #fff;
+	text-align: left;
+	font-size: 16px;
+}
+
+
+#team p {
+	font-size: 13px;
+	padding-top: 10px;
+}
+
+#team .link>a{
+	width: 25%;
+    height: 65px;
+    float: left;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+	background-color: #2e4a5b;
+	position: relative;
+}
+
+#team .link>a:hover {
+	background-color: #18cfab;
+}
+
+#team .link>a div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+}
+
+#team .teamPlus {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	display: none;
+	cursor: pointer;
+}
+
+#team .hover {
+	display: block;
+}

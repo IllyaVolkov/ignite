@@ -1,0 +1,25 @@
+﻿{
+  "history": {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "paragraphs": [
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint.",
+      "Excepteur sint occaecat sint."
+    ]
+  },
+  "biography": {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum Suspendisse cursus malesuada facilisis. Nunc con sectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibu lum nec odio ipsum. Sus pendisse cursus malesua da facilisis. Vestibulum nec odio ipsum. \n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum Suspendisse cursus malesuada facilisis. Nunc con sectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  "skills": {
+    "interface": 70,
+    "web": 80,
+    "wordpress": 60,
+    "html": 90,
+    "app": 80
+  }
+}

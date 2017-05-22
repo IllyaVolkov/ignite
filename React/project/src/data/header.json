@@ -1,0 +1,10 @@
+﻿[
+  { "name": "home", "source": "home", "selected": true},
+  { "name": "about", "source": "about", "selected": false},
+  { "name": "service", "source": "services", "selected": false},
+  { "name": "work", "source": "work", "selected": false},
+  { "name": "testimonial", "source": "feedback", "selected": false},
+  { "name": "blog", "source": "news", "selected": false},
+  { "name": "team", "source": "team", "selected": false},
+  { "name": "contact", "source": "contact", "selected": false}
+]

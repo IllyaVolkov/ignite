@@ -1,0 +1,87 @@
+﻿#home>div {
+	height: 1012px;
+	background-color: #3c3c3c;
+    background-position:center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 0;
+}
+
+#home .col-lg-1 {
+    z-index: 10;
+}
+
+#home .homeLeft, #home .homeRight {
+    margin-top: 570px;
+    cursor: pointer;
+}
+
+#home .homeLeft {
+    float: right;
+}
+
+#home .homeRight {
+    float: left;
+}
+
+#home .wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#home span {
+    color: #18cfab;
+}
+
+#home h3 {
+    font-size: 35px;
+    color: #fff;
+    margin-top: 360px;
+    text-transform: uppercase;
+}
+
+#home h1 {
+    color: #fff;
+    margin-top: 20px;
+}
+
+#home h2 {
+    font-family: 'Montserrat Bold';
+    color: #fff;
+    margin-top: 20px;
+    text-transform:uppercase;
+}
+
+#home p {
+    font-size: 32px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#home .wrapper .row {
+    margin-top: 140px;
+}
+
+#home button {
+    width: 165px;
+    height: 60px;
+    margin: 0 15px 15px 15px;
+    border: none;
+    outline: none;
+    border-top: 5px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    font-family: 'Montserrat Bold';
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+#home .green {
+    background: #18cfab;
+}
+
+#home .blue {
+    background: #00cbf6;
+}

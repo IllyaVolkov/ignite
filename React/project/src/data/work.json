@@ -1,0 +1,14 @@
+﻿[
+  { "name": "creative design", "category": "Web Design", "img": "static/img/work1.jpg"},
+  { "name": "creative design", "category": "Web Design", "img": "static/img/work1.jpg"},
+  { "name": "creative design", "category": "Web Design", "img": "static/img/work1.jpg"},
+  { "name": "creative design", "category": "Graphic Design", "img": "static/img/work2.jpg"},
+  { "name": "creative design", "category": "Graphic Design", "img": "static/img/work2.jpg"},
+  { "name": "creative design", "category": "Graphic Design", "img": "static/img/work2.jpg"},
+  { "name": "creative design", "category": "Landing Pages", "img": "static/img/work3.jpg"},
+  { "name": "creative design", "category": "Landing Pages", "img": "static/img/work3.jpg"},
+  { "name": "creative design", "category": "Landing Pages", "img": "static/img/work3.jpg"},
+  { "name": "creative design", "category": "Wordpress", "img": "static/img/work4.jpg"},
+  { "name": "creative design", "category": "Wordpress", "img": "static/img/work4.jpg"},
+  { "name": "creative design", "category": "Wordpress", "img": "static/img/work4.jpg"}
+]

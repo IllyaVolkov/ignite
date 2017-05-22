@@ -1,0 +1,55 @@
+﻿@font-face {
+    font-family: Montserrat Bold;
+    src: url(../fonts/Montserrat-Bold.otf);
+}
+
+@font-face {
+    font-family: Montserrat Regular;
+    src: url(../fonts/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat Light;
+    src: url(../fonts/Montserrat-Light.otf);
+}
+
+body {
+    background: #fff;
+}
+
+body p {
+    font-family: 'Montserrat Light';
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+body h1 {
+    font-family: 'Montserrat Bold';
+    font-size: 79px;
+    text-transform:uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body h2 {
+    font-family: 'Montserrat Regular';
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body h3 {
+    font-family: 'Montserrat Bold';
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body .separator {
+    padding: 0;
+    margin: 30px auto;
+}

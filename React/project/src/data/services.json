@@ -1,0 +1,8 @@
+﻿{
+  "web": { "img": "static/img/question.jpg", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+  "graphic": { "img": "static/img/question.jpg", "text": "some text 1"},
+  "support": { "img": "static/img/question.jpg", "text": "some text 2"},
+  "app": { "img": "static/img/question.jpg", "text": "some text 3"},
+  "marketing": { "img": "static/img/question.jpg", "text": "some text 4"},
+  "seo": { "img": "static/img/question.jpg", "text": "some text 5"}
+}

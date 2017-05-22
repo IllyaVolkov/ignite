@@ -1,0 +1,6 @@
+﻿{
+  "works": {"limit": 4609, "state": 0},
+  "customers": {"limit": 3470, "state": 0},
+  "purchase": {"limit": 2908, "state": 0},
+  "office": {"limit": 1908, "state": 0}
+}

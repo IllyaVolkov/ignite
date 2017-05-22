@@ -1,0 +1,14 @@
+﻿[
+  {
+    "image": "static/img/image1.jpg",
+    "text": "slide 1"
+  },
+  {
+    "image": "static/img/image2.jpg",
+    "text": "slide 2"
+  },
+  {
+    "image": "static/img/image3.jpg",
+    "text": "slide 3"
+  }
+]

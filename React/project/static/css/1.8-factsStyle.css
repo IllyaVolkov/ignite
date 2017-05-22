@@ -1,0 +1,42 @@
+﻿#facts .container-fluid>div{
+	height: 367px;
+    text-align: center;
+}
+
+#facts .dark {
+    background: #25333c;
+    color: #18cfab;
+    border-top: 7px solid #18cfab;
+}
+
+#facts .light {
+    background: #18cfab;
+    color: #25333c;
+    border-top: 7px solid #25333c;
+}
+
+#facts .container-fluid {
+    padding: 0;
+}
+
+#facts .container-fluid>div>div {
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#facts span {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+}
+
+#facts p {
+	font-size: 18px;
+}
+
+#facts h2 {
+	color: #fff;
+}

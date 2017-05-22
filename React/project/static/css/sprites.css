@@ -1,0 +1,148 @@
+.logo, .homeLeft, .homeRight, .homeRightHover, .homeLeftHover, .option1, .option2, .option3, .option4, .separator, .workHoverIcon, .upArrow, .plus, .cross, .teamPlus, .facebook, .twitter, .skype, .iconV, .works, .customers, .purchase, .office, .menu{
+	background: url(../img/sprites.png) no-repeat;
+}
+
+.logo{
+	background-position: 0 0;
+	width: 195px;
+	height: 67px;
+}
+
+.homeLeft{
+	background-position: -200px 0;
+	width: 63px;
+	height: 63px;
+}
+
+.homeRight{
+	background-position: -270px 0;
+	width: 63px;
+	height: 63px;
+}
+
+.homeRight:hover{
+	background-position: -410px 0;
+	width: 63px;
+	height: 63px;
+}
+
+.homeLeft:hover{
+	background-position: -340px 0;
+	width: 63px;
+	height: 63px;
+}
+
+.option1{
+	background-position: 0 -70px ;
+	width: 58px;
+	height: 97px;
+}
+
+.option2{
+	background-position: -70px -70px ;
+	width: 93px;
+	height: 75px;
+}
+
+.option3{
+	background-position: -175px -70px ;
+	width: 60px;
+	height: 96px;
+}
+
+.option4{
+	background-position: -240px -70px ;
+	width: 99px;
+	height: 76px;
+}
+
+.separator{
+	background-position: -70px -160px ;
+	width: 88px;
+	height: 5px;
+}
+
+.workHoverIcon{
+	background-position: -360px -70px ;
+	width: 87px;
+	height: 40px;
+}
+
+.upArrow{
+	background-position: -360px -120px ;
+	width: 44px;
+	height: 44px;
+}
+
+.plus{
+	background-position: -450px -70px ;
+	width: 16px;
+	height: 16px;
+}
+
+.cross{
+	background-position: -450px -95px ;
+	width: 12px;
+	height: 12px;
+}
+
+.teamPlus{
+	background-position: -480px 0;
+	width: 85px;
+	height: 85px;
+}
+
+.facebook{
+	background-position: -410px -120px ;
+	width: 10px;
+	height: 23px;
+}
+
+.twitter{
+	background-position: -430px -120px ;
+	width: 21px;
+	height: 17px;
+}
+
+.skype{
+	background-position: -410px -150px ;
+	width: 19px;
+	height: 19px;
+}
+
+.iconV{
+	background-position: -440px -150px ;
+	width: 22px;
+	height: 19px;
+}
+
+.works{
+	background-position: 0 -190px ;
+	width: 165px;
+	height: 165px;
+}
+
+.customers{
+	background-position: -180px -190px ;
+	width: 165px;
+	height: 165px;
+}
+
+.purchase{
+	background-position: -360px -190px ;
+	width: 165px;
+	height: 165px;
+}
+
+.office{
+	background-position: 0 -360px ;
+	width: 165px;
+	height: 165px;
+}
+
+.menu{
+	background-position: -170px -360px ;
+	width: 40px;
+	height: 40px;
+}
+
